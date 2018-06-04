@@ -54,6 +54,9 @@
                     
                     
                     <button input type="submit" class="btn btn-primary block full-width m-b">Registrar</button>  
+                    <c:if test="${mens=='guardado'}">                                 
+                        <% response.sendRedirect("login.htm"); %> 
+                    </c:if>
                     
                     
                     

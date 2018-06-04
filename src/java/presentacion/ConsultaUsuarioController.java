@@ -47,8 +47,7 @@ public class ConsultaUsuarioController {
                    return "index";
                } else {
                    model.addAttribute("mensaje", "noencuentra");
-                   //return "usuarioCrear";
-                   return null;
+                   return "loginUsuario";
                }
                
                

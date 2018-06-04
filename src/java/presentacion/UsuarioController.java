@@ -38,7 +38,8 @@ public class UsuarioController {
         }else{
             try {
                 servicio.agregarUsuario(usuario);
-                return "loginUsuario";
+                model.addAttribute("mens", "guardado");
+                return "usuarioCrear";
             } catch (UnexpectedRollbackException e) {
 
 
