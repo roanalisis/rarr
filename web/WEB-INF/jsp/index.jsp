@@ -54,15 +54,14 @@
                             IN+
                         </div>
                     </li>-->
-                    <!--<li class="active">
-                        <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span> <span class="fa arrow"></span></a>
+                    <li class="active">
+                        <a href="index.htm"><i class="fa fa-th-large"></i> <span class="nav-label">Análisis</span> <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li class="active"><a href="index.html">Dashboard v.1</a></li>
-                            <li><a href="dashboard_2.html">Dashboard v.2</a></li>
-                            <li><a href="dashboard_3.html">Dashboard v.3</a></li>
-                            <li><a href="dashboard_4_1.html">Dashboard v.4</a></li>
+                            <li><a href="histograma.htm">Histograma</a></li>
+                            <li><a href="tabladedatos.htm">Tabla de datos</a></li>
+                            <li><a href="configuracion.htm">Configuración</a></li>
                         </ul>
-                    </li>-->
+                    </li>
                     <li>
                         <!--<a href="layouts.html"><i class="fa fa-diamond"></i> <span class="nav-label">Layouts</span></a>-->
                         <a href="<c:url value="agregarTermometro.htm" />">Agregar Termómetro</a><br />
@@ -457,8 +456,8 @@
                                 <small>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</small>
                             </div>
 
-                        </div>
-                    </div>-->
+                        </div>-->
+                    </div>
 
             </div>
        <div class="row">
@@ -1319,7 +1318,7 @@
                     showMethod: 'slideDown',
                     timeOut: 4000
                 };
-                toastr.success('Responsive Admin Theme', 'Welcome to INSPINIA');
+                toastr.success('Bienvenido a A.T.A.');
 
             }, 1300);
 

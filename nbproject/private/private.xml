@@ -3,10 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/rodrigorr/NetBeansProjects/Adam6015/web/WEB-INF/jsp/loginUsuario.jsp</file>
-            <file>file:/home/rodrigorr/NetBeansProjects/Adam6015/src/java/presentacion/ConsultaUsuarioController.java</file>
-            <file>file:/home/rodrigorr/NetBeansProjects/Adam6015/web/WEB-INF/jsp/usuarioCrear.jsp</file>
-            <file>file:/home/rodrigorr/NetBeansProjects/Adam6015/src/java/presentacion/UsuarioController.java</file>
+            <file>file:/home/rodrigorr/NetBeansProjects/Adam6015/rarr/src/java/presentacion/UsuarioController.java</file>
+            <file>file:/home/rodrigorr/NetBeansProjects/Adam6015/rarr/web/WEB-INF/jsp/histograma.jsp</file>
+            <file>file:/home/rodrigorr/NetBeansProjects/Adam6015/rarr/web/WEB-INF/jsp/index.jsp</file>
+            <file>file:/home/rodrigorr/NetBeansProjects/Adam6015/rarr/src/java/presentacion/ConsultaUsuarioController.java</file>
+            <file>file:/home/rodrigorr/NetBeansProjects/Adam6015/rarr/web/WEB-INF/jsp/usuarioCrear.jsp</file>
+            <file>file:/home/rodrigorr/NetBeansProjects/Adam6015/rarr/web/WEB-INF/jsp/tabladedatos.jsp</file>
+            <file>file:/home/rodrigorr/NetBeansProjects/Adam6015/rarr/web/WEB-INF/jsp/loginUsuario.jsp</file>
         </group>
     </open-files>
 </project-private>

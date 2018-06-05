@@ -33,6 +33,8 @@
         <property name="mappings">
             <props>
                 <prop key="index.htm">indexController</prop>
+                <prop key="histograma.htm">histogramaController</prop>
+                <prop key="tabladedatos.htm">tabladedatosController</prop>
             </props>
         </property>
     </bean>
@@ -48,6 +50,19 @@
     <bean name="indexController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="index" />
+    
+    <bean name="histogramaController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="histograma" />
+    
+    <bean name="tabladedatosController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="tabladedatos" />
+    
+    
+    
+    
+    
     
 
 
