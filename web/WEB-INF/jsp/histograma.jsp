@@ -5,6 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -64,9 +66,9 @@
                     
                     <li>
                         <!--<a href="layouts.html"><i class="fa fa-diamond"></i> <span class="nav-label">Layouts</span></a>-->
-                        <a href="<c:url value="agregarTermometro.htm" />Agregar Termómetro</a><br />
-                        <a href="<c:url value="agregarUsuario.htm" />Agregar Usuario</a><br />
-                        <a href="<c:url value="login.htm" />Log out</a><br />
+                        <a href="<c:url value="agregarTermometro.htm" />">Agregar Termómetro</a><br />
+                        <a href="<c:url value="agregarUsuario.htm" />">Agregar Usuario</a><br />
+                        <a href="<c:url value="login.htm" />">Log out</a><br />
                         
                         
                         
