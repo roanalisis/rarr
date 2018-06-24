@@ -48,7 +48,6 @@ public class Configuracion implements Serializable {
     @Column(name = "id_conf")
     private Integer idConf;
     @Basic(optional = false)
-    @NotNull
     @Column(name = "tmestamp")
     @Temporal(TemporalType.TIMESTAMP)
     private Date tmestamp;

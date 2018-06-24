@@ -19,7 +19,7 @@ import servicio.ServiceException;
 @Controller
 @RequestMapping(value="/login.htm") //dar un valor en donde va a ser observada una url
 public class ConsultaUsuarioController {
-    @Autowired
+   @Autowired
    private ServiceConsultaUsuario servicio;
 
    
