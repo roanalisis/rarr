@@ -32,22 +32,23 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Configuracion.findAll", query = "SELECT c FROM Configuracion c")
-    , @NamedQuery(name = "Configuracion.findByIdConf", query = "SELECT c FROM Configuracion c WHERE c.idConf = :idConf")
+    , @NamedQuery(name = "Configuracion.findByIdconf", query = "SELECT c FROM Configuracion c WHERE c.idconf = :idconf")
     , @NamedQuery(name = "Configuracion.findByTmestamp", query = "SELECT c FROM Configuracion c WHERE c.tmestamp = :tmestamp")
     , @NamedQuery(name = "Configuracion.findByMaxim", query = "SELECT c FROM Configuracion c WHERE c.maxim = :maxim")
     , @NamedQuery(name = "Configuracion.findByMinim", query = "SELECT c FROM Configuracion c WHERE c.minim = :minim")
-    , @NamedQuery(name = "Configuracion.findByIntervaloH", query = "SELECT c FROM Configuracion c WHERE c.intervaloH = :intervaloH")
-    , @NamedQuery(name = "Configuracion.findByIntervaloM", query = "SELECT c FROM Configuracion c WHERE c.intervaloM = :intervaloM")
-    , @NamedQuery(name = "Configuracion.findByIntervaloS", query = "SELECT c FROM Configuracion c WHERE c.intervaloS = :intervaloS")})
+    , @NamedQuery(name = "Configuracion.findByIntervaloh", query = "SELECT c FROM Configuracion c WHERE c.intervaloh = :intervaloh")
+    , @NamedQuery(name = "Configuracion.findByIntervalom", query = "SELECT c FROM Configuracion c WHERE c.intervalom = :intervalom")
+    , @NamedQuery(name = "Configuracion.findByIntervalos", query = "SELECT c FROM Configuracion c WHERE c.intervalos = :intervalos")})
 public class Configuracion implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "id_conf")
-    private Integer idConf;
+    @Column(name = "idconf")
+    private Integer idconf;
     @Basic(optional = false)
+    //@NotNull
     @Column(name = "tmestamp")
     @Temporal(TemporalType.TIMESTAMP)
     private Date tmestamp;
@@ -56,34 +57,34 @@ public class Configuracion implements Serializable {
     private Float maxim;
     @Column(name = "minim")
     private Float minim;
-    @Column(name = "intervalo_h")
-    private Integer intervaloH;
-    @Column(name = "intervalo_m")
-    private Integer intervaloM;
-    @Column(name = "intervalo_s")
-    private Integer intervaloS;
-    @JoinColumn(name = "id_termometro", referencedColumnName = "id_term")
-    @ManyToOne
-    private Termometro idTermometro;
+    @Column(name = "intervaloh")
+    private Integer intervaloh;
+    @Column(name = "intervalom")
+    private Integer intervalom;
+    @Column(name = "intervalos")
+    private Integer intervalos;
+    @JoinColumn(name = "idtermometro", referencedColumnName = "idterm")
+    @ManyToOne(optional = false)
+    private Termometro idtermometro;
 
     public Configuracion() {
     }
 
-    public Configuracion(Integer idConf) {
-        this.idConf = idConf;
+    public Configuracion(Integer idconf) {
+        this.idconf = idconf;
     }
 
-    public Configuracion(Integer idConf, Date tmestamp) {
-        this.idConf = idConf;
+    public Configuracion(Integer idconf, Date tmestamp) {
+        this.idconf = idconf;
         this.tmestamp = tmestamp;
     }
 
-    public Integer getIdConf() {
-        return idConf;
+    public Integer getIdconf() {
+        return idconf;
     }
 
-    public void setIdConf(Integer idConf) {
-        this.idConf = idConf;
+    public void setIdconf(Integer idconf) {
+        this.idconf = idconf;
     }
 
     public Date getTmestamp() {
@@ -110,42 +111,42 @@ public class Configuracion implements Serializable {
         this.minim = minim;
     }
 
-    public Integer getIntervaloH() {
-        return intervaloH;
+    public Integer getIntervaloh() {
+        return intervaloh;
     }
 
-    public void setIntervaloH(Integer intervaloH) {
-        this.intervaloH = intervaloH;
+    public void setIntervaloh(Integer intervaloh) {
+        this.intervaloh = intervaloh;
     }
 
-    public Integer getIntervaloM() {
-        return intervaloM;
+    public Integer getIntervalom() {
+        return intervalom;
     }
 
-    public void setIntervaloM(Integer intervaloM) {
-        this.intervaloM = intervaloM;
+    public void setIntervalom(Integer intervalom) {
+        this.intervalom = intervalom;
     }
 
-    public Integer getIntervaloS() {
-        return intervaloS;
+    public Integer getIntervalos() {
+        return intervalos;
     }
 
-    public void setIntervaloS(Integer intervaloS) {
-        this.intervaloS = intervaloS;
+    public void setIntervalos(Integer intervalos) {
+        this.intervalos = intervalos;
     }
 
-    public Termometro getIdTermometro() {
-        return idTermometro;
+    public Termometro getIdtermometro() {
+        return idtermometro;
     }
 
-    public void setIdTermometro(Termometro idTermometro) {
-        this.idTermometro = idTermometro;
+    public void setIdtermometro(Termometro idtermometro) {
+        this.idtermometro = idtermometro;
     }
 
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (idConf != null ? idConf.hashCode() : 0);
+        hash += (idconf != null ? idconf.hashCode() : 0);
         return hash;
     }
 
@@ -156,7 +157,7 @@ public class Configuracion implements Serializable {
             return false;
         }
         Configuracion other = (Configuracion) object;
-        if ((this.idConf == null && other.idConf != null) || (this.idConf != null && !this.idConf.equals(other.idConf))) {
+        if ((this.idconf == null && other.idconf != null) || (this.idconf != null && !this.idconf.equals(other.idconf))) {
             return false;
         }
         return true;
@@ -164,7 +165,7 @@ public class Configuracion implements Serializable {
 
     @Override
     public String toString() {
-        return "persistencia.Configuracion[ idConf=" + idConf + " ]";
+        return "persistencia.Configuracion[ idconf=" + idconf + " ]";
     }
     
 }

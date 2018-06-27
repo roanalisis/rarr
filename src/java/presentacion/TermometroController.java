@@ -32,12 +32,12 @@ public class TermometroController {
     @RequestMapping(method=RequestMethod.POST)
     public String procesar(@Valid @ModelAttribute("termometro") TermometroDTO termometro, BindingResult resul, Model model) throws ServiceException{
         if(resul.hasErrors()){
+            model.addAttribute("mensaje",resul);
             return "termometroCrear";
         }else{
             try {
                 servicio.agregarTermometro(termometro);
                 model.addAttribute("mensaje","Termómetro registrado con éxito.");
-                model.addAttribute("idd",termometro.getIdTerm());
                 model.addAttribute("cla",termometro.getClase());
                 model.addAttribute("nom",termometro.getNombre());
                 model.addAttribute("dip",termometro.getDirip());

@@ -36,8 +36,10 @@ public class ConfiguracionController {
    
    @RequestMapping(method=RequestMethod.POST)
    public String procesar(@Valid @ModelAttribute("configuracion") ConfiguracionDTO configuracion, BindingResult resul, Model model) throws ServiceException{
-        if(resul.hasErrors()){
+       System.out.println(resul.toString()); 
+       if(resul.hasErrors()){
             model.addAttribute("mensAj", resul.getFieldError());
+            model.addAttribute("lisTerm", servicioCons.listarTermometros());
             return "ConfiguracionCrear";
         }else{
             try {
@@ -45,13 +47,12 @@ public class ConfiguracionController {
                 model.addAttribute("mensAj", "guardado");
                 model.addAttribute("maxim", configuracion.getMaxim());
                 model.addAttribute("minim", configuracion.getMinim());
-                model.addAttribute("intervaloH", configuracion.getIntervaloH());
-                model.addAttribute("intervaloM", configuracion.getIntervaloM());
-                model.addAttribute("intervaloS", configuracion.getIntervaloS());
+                model.addAttribute("intervaloh", configuracion.getIntervaloh());
+                model.addAttribute("intervalom", configuracion.getIntervalom());
+                model.addAttribute("intervalos", configuracion.getIntervalos());
                 model.addAttribute("lisTerm", servicioCons.listarTermometros());
                 return "ConfiguracionCrear";
             } catch (UnexpectedRollbackException e) {
-
 
                 return "ConfiguracionCrear";
             }

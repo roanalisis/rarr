@@ -8,8 +8,11 @@ package persistencia;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -29,7 +32,7 @@ import javax.xml.bind.annotation.XmlTransient;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Termometro.findAll", query = "SELECT t FROM Termometro t")
-    , @NamedQuery(name = "Termometro.findByIdTerm", query = "SELECT t FROM Termometro t WHERE t.idTerm = :idTerm")
+    , @NamedQuery(name = "Termometro.findByIdterm", query = "SELECT t FROM Termometro t WHERE t.idterm = :idterm")
     , @NamedQuery(name = "Termometro.findByClase", query = "SELECT t FROM Termometro t WHERE t.clase = :clase")
     , @NamedQuery(name = "Termometro.findByNombre", query = "SELECT t FROM Termometro t WHERE t.nombre = :nombre")
     , @NamedQuery(name = "Termometro.findByDirip", query = "SELECT t FROM Termometro t WHERE t.dirip = :dirip")
@@ -38,11 +41,10 @@ public class Termometro implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 50)
-    @Column(name = "id_term")
-    private String idTerm;
+    @Column(name = "idterm")
+    private Integer idterm;
     @Size(max = 50)
     @Column(name = "clase")
     private String clase;
@@ -58,32 +60,32 @@ public class Termometro implements Serializable {
     @NotNull
     @Column(name = "dirpuerto")
     private int dirpuerto;
-    @OneToMany(mappedBy = "idTermometro")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idtermometro")
     private List<Configuracion> configuracionList;
-    @OneToMany(mappedBy = "idTermometro")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idtermometro")
     private List<Notificacion> notificacionList;
-    @OneToMany(mappedBy = "idTermometro")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idtermometro")
     private List<Registrotemp> registrotempList;
 
     public Termometro() {
     }
 
-    public Termometro(String idTerm) {
-        this.idTerm = idTerm;
+    public Termometro(Integer idterm) {
+        this.idterm = idterm;
     }
 
-    public Termometro(String idTerm, String dirip, int dirpuerto) {
-        this.idTerm = idTerm;
+    public Termometro(Integer idterm, String dirip, int dirpuerto) {
+        this.idterm = idterm;
         this.dirip = dirip;
         this.dirpuerto = dirpuerto;
     }
 
-    public String getIdTerm() {
-        return idTerm;
+    public Integer getIdterm() {
+        return idterm;
     }
 
-    public void setIdTerm(String idTerm) {
-        this.idTerm = idTerm;
+    public void setIdterm(Integer idterm) {
+        this.idterm = idterm;
     }
 
     public String getClase() {
@@ -148,7 +150,7 @@ public class Termometro implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (idTerm != null ? idTerm.hashCode() : 0);
+        hash += (idterm != null ? idterm.hashCode() : 0);
         return hash;
     }
 
@@ -159,7 +161,7 @@ public class Termometro implements Serializable {
             return false;
         }
         Termometro other = (Termometro) object;
-        if ((this.idTerm == null && other.idTerm != null) || (this.idTerm != null && !this.idTerm.equals(other.idTerm))) {
+        if ((this.idterm == null && other.idterm != null) || (this.idterm != null && !this.idterm.equals(other.idterm))) {
             return false;
         }
         return true;
@@ -167,7 +169,7 @@ public class Termometro implements Serializable {
 
     @Override
     public String toString() {
-        return "persistencia.Termometro[ idTerm=" + idTerm + " ]";
+        return "persistencia.Termometro[ idterm=" + idterm + " ]";
     }
     
 }

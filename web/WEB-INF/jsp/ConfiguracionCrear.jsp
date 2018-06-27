@@ -211,21 +211,21 @@
                                     <form:form modelAttribute="configuracion" method="post">
                                         <strong>Temperatura Máxima</strong><form:input id="maxim" path="maxim" type="maxim" placeholder="Tope Máximo" class="form-control" /><form:errors path="maxim" /><br />
                                         <strong>Temperatura Mínima</strong><form:input id="minim" path="minim" type="minim" placeholder="Tope Mínimo" class="form-control" /><form:errors path="minim" /><br />
-                                        <strong>Horas</strong><form:input id="intervaloH" path="intervaloH" type="intervaloH" placeholder="Intervalo en horas" class="form-control" /><form:errors path="intervaloH" /><br />
-                                        <strong>Minutos</strong><form:input id="intervaloM" path="intervaloM" type="intervaloM" placeholder="Intervalo en minutos" class="form-control" /><form:errors path="intervaloM" /><br />            
-                                        <strong>Segundos</strong><form:input id="intervaloS" path="intervaloS" type="intervaloS" placeholder="Intervalo en segundos" class="form-control" /><form:errors path="intervaloS" /><br />           
+                                        <strong>Horas</strong><form:input id="intervaloh" path="intervaloh" type="intervaloh" placeholder="Intervalo en horas" class="form-control" /><form:errors path="intervaloh" /><br />
+                                        <strong>Minutos</strong><form:input id="intervalom" path="intervalom" type="intervalom" placeholder="Intervalo en minutos" class="form-control" /><form:errors path="intervalom" /><br />            
+                                        <strong>Segundos</strong><form:input id="intervalos" path="intervalos" type="intervalos" placeholder="Intervalo en segundos" class="form-control" /><form:errors path="intervalos" /><br />           
+                                        
                                         
                                         <strong>Termómetros</strong><br />
-                                        <form:select path="idTermometro">
-                                            <form:option value="0" label="--- Select ---"/>
-                                            
+                                        <form:select path="idtermometro">
+                                            <form:option value="0" label="--- Select ---"/>                                            
                                         <c:forEach items="${lisTerm}" var="termometro">
-                                            <option value="${termometro.idTerm}" >
+                                            <option value="${termometro.idterm}" >
                                                    ${termometro.nombre}
                                             </option>
                                         </c:forEach>
-                                        <form:errors path="idTermometro" /><br />
-                                        </form:select><br />
+                                        <form:errors path="idtermometro" /><br />
+                                        </form:select><br />  
                                         
                                         <div>
                                             <button class="btn btn-sm btn-primary pull-right m-t-n-xs" input type="submit" value="Registrar" ><strong>Registrar</strong> </button> 
@@ -242,17 +242,18 @@
                                     <script type="text/javascript">
                                         maxim.value="";
                                         minim.value="";
-                                        intervaloH.value="";
-                                        intervaloM.value="";
-                                        intervaloS.value="";
+                                        intervaloh.value="";
+                                        intervalom.value="";
+                                        intervalos.value="";
                                     </script>
                                     <div><strong><c:out value="${mensaje} " /></strong> </div>
                                     <div><c:out value="${mensAj} " /> </div>
                                     <div><c:out value="${maxim} " /> </div>
                                     <div><c:out value="${minim} " /> </div>
-                                    <div><c:out value="${intervaloH} " /> </div>
-                                    <div><c:out value="${intervaloM} " /> </div>
-                                    <div><c:out value="${intervaloS} " /> </div>
+                                    <div><c:out value="${intervaloh} " /> </div>
+                                    <div><c:out value="${intervalom} " /> </div>
+                                    <div><c:out value="${intervalos} " /> </div>
+                                    <div><c:out value="${aDam} " /> </div>
                                 </p>
                             </div> 
                         </div>

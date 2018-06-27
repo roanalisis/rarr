@@ -18,7 +18,7 @@ public class ServiceConsultaTermometros {
     
     public List<Termometro> listarTermometros(){
         Query q = em.createNamedQuery("Termometro.findAll");
-        List<Termometro> termometroList = q.getResultList();   
+        List<Termometro> termometroList = q.getResultList();     
         return termometroList; 
     }
     

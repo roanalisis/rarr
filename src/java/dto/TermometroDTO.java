@@ -18,11 +18,7 @@ import javax.validation.constraints.Size;
  * @author rodrigorr
  */
 public class TermometroDTO implements Serializable{
-    @Id
-    @Basic(optional = false)
-    @NotNull(message = "El identificador del termómetro no debe estar vacío.")
-    @Size(min = 1, max = 50, message = "El largo del identificador debe ir de 1 a 50.")
-    private String idTerm;
+    private Integer idTerm;
     @Size(max = 50, message = "El largo del campo debe ser hasta 50.")
     private String clase;
     @Size(max = 50, message = "El largo del campo debe ser hasta 50.")
@@ -37,19 +33,19 @@ public class TermometroDTO implements Serializable{
     public TermometroDTO() {
     }
 
-    public TermometroDTO(String idTerm, String clase, String nombre, String dirIp, int dirPuerto) {
+    public TermometroDTO(Integer idTerm, String clase, String nombre, String dirip, int dirpuerto) {
         this.idTerm = idTerm;
         this.clase = clase;
         this.nombre = nombre;
-        this.dirip = dirIp;
-        this.dirpuerto = dirPuerto;
+        this.dirip = dirip;
+        this.dirpuerto = dirpuerto;
     }
 
-    public String getIdTerm() {
+    public Integer getIdTerm() {
         return idTerm;
     }
 
-    public void setIdTerm(String idTerm) {
+    public void setIdTerm(Integer idTerm) {
         this.idTerm = idTerm;
     }
 
@@ -84,6 +80,8 @@ public class TermometroDTO implements Serializable{
     public void setDirpuerto(int dirpuerto) {
         this.dirpuerto = dirpuerto;
     }
+
+    
     
     
    

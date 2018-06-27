@@ -24,7 +24,6 @@ public class ServiceTermometro {
     @Transactional(rollbackOn = {ServiceException.class})
     public void agregarTermometro(TermometroDTO termometro) throws ServiceException{
         Termometro t = new Termometro();
-        t.setIdTerm(termometro.getIdTerm());
         t.setClase(termometro.getClase());
         t.setNombre(termometro.getNombre());
         t.setDirip(termometro.getDirip());

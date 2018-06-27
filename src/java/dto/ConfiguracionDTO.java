@@ -14,25 +14,26 @@ import persistencia.Termometro;
 public class ConfiguracionDTO implements Serializable{
     private Integer idConf;
     private Date tmestamp;
-    private Float maxim; //temperatura máxima
-    private Float minim; //temperatura máxima
-    private Integer intervaloH;
-    private Integer intervaloM;
-    private Integer intervaloS;
-    private Termometro idTermometro;
+    private Float maxim;
+    private Float minim;
+    private Integer intervaloh;
+    private Integer intervalom;
+    private Integer intervalos;
+    @NotNull(message = "El idTermometro no debe estar vacío.")
+    private Integer idtermometro;
 
     public ConfiguracionDTO() {
     }
 
-    public ConfiguracionDTO(Integer idConf, Date tmestamp, Float maxim, Float minim, Integer intervaloH, Integer intervaloM, Integer intervaloS, Termometro idTermometro) {
+    public ConfiguracionDTO(Integer idConf, Date tmestamp, Float maxim, Float minim, Integer intervaloh, Integer intervalom, Integer intervalos, Integer idtermometro) {
         this.idConf = idConf;
         this.tmestamp = tmestamp;
         this.maxim = maxim;
         this.minim = minim;
-        this.intervaloH = intervaloH;
-        this.intervaloM = intervaloM;
-        this.intervaloS = intervaloS;
-        this.idTermometro = idTermometro;
+        this.intervaloh = intervaloh;
+        this.intervalom = intervalom;
+        this.intervalos = intervalos;
+        this.idtermometro = idtermometro;
     }
 
     public Integer getIdConf() {
@@ -67,40 +68,38 @@ public class ConfiguracionDTO implements Serializable{
         this.minim = minim;
     }
 
-    public Integer getIntervaloH() {
-        return intervaloH;
+    public Integer getIntervaloh() {
+        return intervaloh;
     }
 
-    public void setIntervaloH(Integer intervaloH) {
-        this.intervaloH = intervaloH;
+    public void setIntervaloh(Integer intervaloh) {
+        this.intervaloh = intervaloh;
     }
 
-    public Integer getIntervaloM() {
-        return intervaloM;
+    public Integer getIntervalom() {
+        return intervalom;
     }
 
-    public void setIntervaloM(Integer intervaloM) {
-        this.intervaloM = intervaloM;
+    public void setIntervalom(Integer intervalom) {
+        this.intervalom = intervalom;
     }
 
-    public Integer getIntervaloS() {
-        return intervaloS;
+    public Integer getIntervalos() {
+        return intervalos;
     }
 
-    public void setIntervaloS(Integer intervaloS) {
-        this.intervaloS = intervaloS;
+    public void setIntervalos(Integer intervalos) {
+        this.intervalos = intervalos;
     }
 
-    public Termometro getIdTermometro() {
-        return idTermometro;
+    public Integer getIdtermometro() {
+        return idtermometro;
     }
 
-    public void setIdTermometro(Termometro idTermometro) {
-        this.idTermometro = idTermometro;
+    public void setIdtermometro(Integer idtermometro) {
+        this.idtermometro = idtermometro;
     }
 
-    
-    
     
     
 }

@@ -214,8 +214,7 @@
                                 <!--<p>Sign in today for more expirience.</p>-->
                                 <!--<form role="form">-->
                                     
-                                    <form:form modelAttribute="termometro" method="post">
-                                        <strong>ID termómetro</strong><form:input id="idTerm" path="idTerm" type="idTerm" placeholder="Ingrese el ID" class="form-control" /><form:errors path="idTerm" /><br />
+                                    <form:form modelAttribute="termometro" method="post">                                        
                                         <strong>Dirección IP</strong><form:input id="dirip" path="dirip" type="dirip" placeholder="Ingrese la Dirección IP" class="form-control" /><form:errors path="dirip" /><br />
                                         <strong>Puerto</strong><form:input id="dirpuerto" path="dirpuerto" type="dirpuerto" placeholder="Ingrese el Puerto" class="form-control" /><form:errors path="dirpuerto" /><br />
                                         <strong>Clase termómetro</strong><form:input id="clase" path="clase" type="clase" placeholder="Ingrese la clase" class="form-control" /><form:errors path="clase" /><br />            
@@ -233,14 +232,12 @@
                                 <p class="text-center">
                                     <!--<a href=""><i class="fa fa-sign-in big-icon"></i></a>-->
                                     <script type="text/javascript">
-                                        idTerm.value="";
                                         dirip.value="";
                                         dirpuerto.value="";
                                         clase.value="";
                                         nombre.value="";
                                     </script>
                                     <div><strong><c:out value="${mensaje} " /></strong> </div>
-                                    <div><c:out value="${idd} " /> </div>
                                     <div><c:out value="${cla} " /> </div>
                                     <div><c:out value="${nom} " /> </div>
                                     <div><c:out value="${dip} " /> </div>

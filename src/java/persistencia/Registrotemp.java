@@ -32,7 +32,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Registrotemp.findAll", query = "SELECT r FROM Registrotemp r")
-    , @NamedQuery(name = "Registrotemp.findByIdReg", query = "SELECT r FROM Registrotemp r WHERE r.idReg = :idReg")
+    , @NamedQuery(name = "Registrotemp.findByIdreg", query = "SELECT r FROM Registrotemp r WHERE r.idreg = :idreg")
     , @NamedQuery(name = "Registrotemp.findByTmestamp", query = "SELECT r FROM Registrotemp r WHERE r.tmestamp = :tmestamp")
     , @NamedQuery(name = "Registrotemp.findByTemperatura", query = "SELECT r FROM Registrotemp r WHERE r.temperatura = :temperatura")})
 public class Registrotemp implements Serializable {
@@ -41,8 +41,8 @@ public class Registrotemp implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "id_reg")
-    private Integer idReg;
+    @Column(name = "idreg")
+    private Integer idreg;
     @Basic(optional = false)
     @NotNull
     @Column(name = "tmestamp")
@@ -51,28 +51,28 @@ public class Registrotemp implements Serializable {
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Column(name = "temperatura")
     private Float temperatura;
-    @JoinColumn(name = "id_termometro", referencedColumnName = "id_term")
-    @ManyToOne
-    private Termometro idTermometro;
+    @JoinColumn(name = "idtermometro", referencedColumnName = "idterm")
+    @ManyToOne(optional = false)
+    private Termometro idtermometro;
 
     public Registrotemp() {
     }
 
-    public Registrotemp(Integer idReg) {
-        this.idReg = idReg;
+    public Registrotemp(Integer idreg) {
+        this.idreg = idreg;
     }
 
-    public Registrotemp(Integer idReg, Date tmestamp) {
-        this.idReg = idReg;
+    public Registrotemp(Integer idreg, Date tmestamp) {
+        this.idreg = idreg;
         this.tmestamp = tmestamp;
     }
 
-    public Integer getIdReg() {
-        return idReg;
+    public Integer getIdreg() {
+        return idreg;
     }
 
-    public void setIdReg(Integer idReg) {
-        this.idReg = idReg;
+    public void setIdreg(Integer idreg) {
+        this.idreg = idreg;
     }
 
     public Date getTmestamp() {
@@ -91,18 +91,18 @@ public class Registrotemp implements Serializable {
         this.temperatura = temperatura;
     }
 
-    public Termometro getIdTermometro() {
-        return idTermometro;
+    public Termometro getIdtermometro() {
+        return idtermometro;
     }
 
-    public void setIdTermometro(Termometro idTermometro) {
-        this.idTermometro = idTermometro;
+    public void setIdtermometro(Termometro idtermometro) {
+        this.idtermometro = idtermometro;
     }
 
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (idReg != null ? idReg.hashCode() : 0);
+        hash += (idreg != null ? idreg.hashCode() : 0);
         return hash;
     }
 
@@ -113,7 +113,7 @@ public class Registrotemp implements Serializable {
             return false;
         }
         Registrotemp other = (Registrotemp) object;
-        if ((this.idReg == null && other.idReg != null) || (this.idReg != null && !this.idReg.equals(other.idReg))) {
+        if ((this.idreg == null && other.idreg != null) || (this.idreg != null && !this.idreg.equals(other.idreg))) {
             return false;
         }
         return true;
@@ -121,7 +121,7 @@ public class Registrotemp implements Serializable {
 
     @Override
     public String toString() {
-        return "persistencia.Registrotemp[ idReg=" + idReg + " ]";
+        return "persistencia.Registrotemp[ idreg=" + idreg + " ]";
     }
     
 }

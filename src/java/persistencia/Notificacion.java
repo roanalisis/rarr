@@ -32,7 +32,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Notificacion.findAll", query = "SELECT n FROM Notificacion n")
-    , @NamedQuery(name = "Notificacion.findByIdNot", query = "SELECT n FROM Notificacion n WHERE n.idNot = :idNot")
+    , @NamedQuery(name = "Notificacion.findByIdnot", query = "SELECT n FROM Notificacion n WHERE n.idnot = :idnot")
     , @NamedQuery(name = "Notificacion.findByTmestamp", query = "SELECT n FROM Notificacion n WHERE n.tmestamp = :tmestamp")
     , @NamedQuery(name = "Notificacion.findByTemperatura", query = "SELECT n FROM Notificacion n WHERE n.temperatura = :temperatura")})
 public class Notificacion implements Serializable {
@@ -41,8 +41,8 @@ public class Notificacion implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "id_not")
-    private Integer idNot;
+    @Column(name = "idnot")
+    private Integer idnot;
     @Basic(optional = false)
     @NotNull
     @Column(name = "tmestamp")
@@ -51,28 +51,28 @@ public class Notificacion implements Serializable {
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Column(name = "temperatura")
     private Float temperatura;
-    @JoinColumn(name = "id_termometro", referencedColumnName = "id_term")
-    @ManyToOne
-    private Termometro idTermometro;
+    @JoinColumn(name = "idtermometro", referencedColumnName = "idterm")
+    @ManyToOne(optional = false)
+    private Termometro idtermometro;
 
     public Notificacion() {
     }
 
-    public Notificacion(Integer idNot) {
-        this.idNot = idNot;
+    public Notificacion(Integer idnot) {
+        this.idnot = idnot;
     }
 
-    public Notificacion(Integer idNot, Date tmestamp) {
-        this.idNot = idNot;
+    public Notificacion(Integer idnot, Date tmestamp) {
+        this.idnot = idnot;
         this.tmestamp = tmestamp;
     }
 
-    public Integer getIdNot() {
-        return idNot;
+    public Integer getIdnot() {
+        return idnot;
     }
 
-    public void setIdNot(Integer idNot) {
-        this.idNot = idNot;
+    public void setIdnot(Integer idnot) {
+        this.idnot = idnot;
     }
 
     public Date getTmestamp() {
@@ -91,18 +91,18 @@ public class Notificacion implements Serializable {
         this.temperatura = temperatura;
     }
 
-    public Termometro getIdTermometro() {
-        return idTermometro;
+    public Termometro getIdtermometro() {
+        return idtermometro;
     }
 
-    public void setIdTermometro(Termometro idTermometro) {
-        this.idTermometro = idTermometro;
+    public void setIdtermometro(Termometro idtermometro) {
+        this.idtermometro = idtermometro;
     }
 
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (idNot != null ? idNot.hashCode() : 0);
+        hash += (idnot != null ? idnot.hashCode() : 0);
         return hash;
     }
 
@@ -113,7 +113,7 @@ public class Notificacion implements Serializable {
             return false;
         }
         Notificacion other = (Notificacion) object;
-        if ((this.idNot == null && other.idNot != null) || (this.idNot != null && !this.idNot.equals(other.idNot))) {
+        if ((this.idnot == null && other.idnot != null) || (this.idnot != null && !this.idnot.equals(other.idnot))) {
             return false;
         }
         return true;
@@ -121,7 +121,7 @@ public class Notificacion implements Serializable {
 
     @Override
     public String toString() {
-        return "persistencia.Notificacion[ idNot=" + idNot + " ]";
+        return "persistencia.Notificacion[ idnot=" + idnot + " ]";
     }
     
 }
