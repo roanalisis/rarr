@@ -17,9 +17,20 @@ public class ServiceConsultaUsuario {
     @PersistenceContext
     private EntityManager em;
     //
-    public List<Usuario> DenucioByNombreUsuario(String nombreusuario){
+    
+    public List<Usuario> BuscaByNombreUsuario(String nombreusuario){
         Query q = em.createNamedQuery("Usuario.findByNombreusuario");
         q.setParameter("nombreusuario", nombreusuario);
+        List<Usuario> cargaList = q.getResultList(); 
+        return cargaList;  
+
+        
+    }
+    
+    public List<Usuario> BuscaByNombreUsuarioyPassword(String nombreusuario, String passwordU){
+        Query q = em.createNamedQuery("Usuario.findByUsuarioyPassword");
+        q.setParameter("nombreusuario", nombreusuario);
+        q.setParameter("passwordU", passwordU);
         List<Usuario> cargoList = q.getResultList(); 
         return cargoList;  
 

@@ -31,19 +31,31 @@
             <ul class="nav metismenu" id="side-menu">
   <
                 <li class="active">
-                    <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">Agregar Termómetro</span></a>
-                    <!--<ul class="nav nav-second-level collapse">
-                        <li class="active"><a href="form_basic.html">Basic form</a></li>
-                        <li><a href="form_advanced.html">Advanced Plugins</a></li>
-                        <li><a href="form_wizard.html">Wizard</a></li>
-                        <li><a href="form_file_upload.html">File Upload</a></li>
-                        <li><a href="form_editors.html">Text Editor</a></li>
-                    </ul>-->
+                        <a href="index.htm"><i class="fa fa-th-large"></i> <span class="nav-label">Análisis</span> <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li><a href="histograma.htm">Histograma</a></li>
+                            <li ><a href="registros.htm">Tabla de datos</a></li>
+                            <li class="active"><a href="configuracion.htm">Configuración</a></li>
+                        </ul>
+                </li>
+                
+                <li>
+                    <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Mantenedor de Termómetros</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="modificarTermometros.htm">Modificar</a></li>
+                        <li><a href="index.htm">Eliminar</a></li>
+                    </ul>
                 </li>
 
                 
                 <li>
-                    <a href="<c:url value="index.htm" />">Home</a><br />
+                        <!--<a href="layouts.html"><i class="fa fa-diamond"></i> <span class="nav-label">Layouts</span></a>-->
+                        <a href="<c:url value="agregarTermometro.htm" />">Agregar Termómetro</a><br />
+                        <a href="<c:url value="agregarUsuario.htm" />">Agregar Usuario</a><br />
+                        <a href="<c:url value="login.htm" />">Log out</a><br />
+                        
+                        
+                        
                 </li>
                 
                 
@@ -59,7 +71,7 @@
             <!--<a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a> -->
             <form role="search" class="navbar-form-custom" action="search_results.html">
                 <div class="form-group">
-                    <input type="text" placeholder="Ingreso de temómetro" class="form-control" name="top-search" id="top-search">
+                    <input type="text" placeholder="Configuración" class="form-control" name="top-search" id="top-search">
                 </div>
             </form>
         </div>
@@ -180,9 +192,9 @@
                         <li>
                             <a href="index.htm">Home</a>
                         </li>
-                        <!--<li>
-                            <a>Forms</a>
-                        </li>-->
+                        <li>
+                            <a>Análisis</a>
+                        </li>
                         <li class="active">
                             <strong>Configuración</strong>
                         </li>
@@ -269,7 +281,7 @@
                 10GB of <strong>250GB</strong> Free.
             </div>
             <div>
-                <strong>Copyright</strong> Example Company &copy; 2014-2015
+                <strong>MMR</strong> &copy; 2018
             </div>
         </div>
 

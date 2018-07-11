@@ -28,8 +28,39 @@ public class ServiceTermometro {
         t.setNombre(termometro.getNombre());
         t.setDirip(termometro.getDirip());
         t.setDirpuerto(termometro.getDirpuerto());
+        t.setRangomax(termometro.getRangomax());
+        t.setRangomin(termometro.getRangomin());
         em.persist(t);
         
     }
+    @PersistenceContext
+    private EntityManager emm;
+    @Transactional(rollbackOn = {ServiceException.class})
+    public void actualizarTermometro(TermometroDTO termometro) throws ServiceException{
+        
+        try {
+        Termometro t = new Termometro();
+        t.setIdterm(termometro.getIdterm());
+        t.setClase(termometro.getClase());
+        t.setNombre(termometro.getNombre());
+        t.setDirip(termometro.getDirip());
+        t.setDirpuerto(termometro.getDirpuerto());
+        t.setRangomax(termometro.getRangomax());
+        t.setRangomin(termometro.getRangomin());
+        emm.merge(t);
+            
+        } catch (Exception e) {
+            System.out.println("¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨ " + e);
+            
+        }
+        
+    }
+    
+//    @Transactional(rollbackOn = {ServiceException.class})
+//    public void eliminarTermometro(TermometroDTO termometro) throws ServiceException{
+//        Termometro t = new Termometro();
+//        t.setIdterm(termometro.getIdterm());
+//        emm.remove(t);
+//    }
     
 }

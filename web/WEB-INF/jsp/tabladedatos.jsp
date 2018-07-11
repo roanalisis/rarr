@@ -51,8 +51,16 @@
                         <a href="index.htm"><i class="fa fa-th-large"></i> <span class="nav-label">Análisis</span> <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
                             <li><a href="histograma.htm">Histograma</a></li>
-                            <li class="active"><a href="tabladedatos.htm">Tabla de datos</a></li>
+                            <li class="active"><a href="registros.htm">Tabla de datos</a></li>
                             <li><a href="configuracion.htm">Configuración</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li >
+                        <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Modificar de Termómetros</span> <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li><a href="modificarTermometros.htm">Modificar</a></li>
+                            <li><a href="index.htm">Eliminar</a></li>
                         </ul>
                     </li>
                     
@@ -207,13 +215,13 @@
                                             
 
                                             <div class="row">
-                                                <div class="col-sm-9 m-b-xs">
+<!--                                                <div class="col-sm-9 m-b-xs">
                                                     <div data-toggle="buttons" class="btn-group">
                                                         <label class="btn btn-sm btn-white"> <input type="radio" id="option1" name="options"> Day </label>
                                                         <label class="btn btn-sm btn-white active"> <input type="radio" id="option2" name="options"> Week </label>
                                                         <label class="btn btn-sm btn-white"> <input type="radio" id="option3" name="options"> Month </label>
                                                     </div>
-                                                </div>
+                                                </div>-->
                                                 <div class="col-sm-3">
                                                     <div class="input-group"><input type="text" placeholder="Search" class="input-sm form-control"> <span class="input-group-btn">
                                                     <button type="button" class="btn btn-sm btn-primary"> Ir!</button> </span></div>
@@ -225,97 +233,25 @@
                                                     <thead>
                                                     <tr>
 
-                                                        <th>#</th>
-                                                        <th>Fecha </th>
+                                                        <th>Id Registro</th>
+                                                        <th>Fecha/Hora </th>
                                                         <th>Temperatura </th>
-                                                        <th>Voltaje </th>                                                        
+                                                        <th>Nombre del termómetro </th> 
+                                                        <th>Activo </th> 
                                                     </tr>
                                                     </thead>
                                                     <tbody>
-                                                    <tr>
-                                                        <td>1</td>
-                                                        <td>02-06-2018</td>
-                                                        <td>23° C</td>
-                                                        <td>36830</td>                                                        
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2</td>
-                                                        <td>02-06-2018</td>
-                                                        <td>23° C</td>
-                                                        <td>36830</td>  
-                                                    </tr>
-                                                    <tr>
-                                                        <td>3</td>
-                                                        <td>02-06-2018</td>
-                                                        <td>23° C</td>
-                                                        <td>36830</td>  
-                                                    </tr>
-                                                    <tr>
-                                                        <td>4</td>
-                                                        <td>02-06-2018</td>
-                                                        <td>23° C</td>
-                                                        <td>36830</td>  
-                                                    </tr>
-                                                    <tr>
-                                                        <td>5</td>
-                                                        <td>02-06-2018</td>
-                                                        <td>23° C</td>
-                                                        <td>36830</td>  
-                                                    </tr>
-                                                    <tr>
-                                                        <td>6</td>
-                                                        <td>02-06-2018</td>
-                                                        <td>23° C</td>
-                                                        <td>36830</td>  
-                                                    </tr>
-                                                    <tr>
-                                                        <td>7</td>
-                                                        <td>02-06-2018</td>
-                                                        <td>23° C</td>
-                                                        <td>36830</td>  
-                                                    </tr>
-                                                    <tr>
-                                                        <td>8</td>
-                                                        <td>02-06-2018</td>
-                                                        <td>23° C</td>
-                                                        <td>36830</td>  
-                                                    </tr>
-                                                    <tr>
-                                                        <td>9</td>
-                                                        <td>02-06-2018</td>
-                                                        <td>23° C</td>
-                                                        <td>36830</td>  
-                                                    </tr>
-                                                    <tr>
-                                                        <td>10</td>
-                                                        <td>02-06-2018</td>
-                                                        <td>23° C</td>
-                                                        <td>36830</td>  
-                                                    </tr>
-                                                    <tr>
-                                                        <td>11</td>
-                                                        <td>02-06-2018</td>
-                                                        <td>23° C</td>
-                                                        <td>36830</td>  
-                                                    </tr>
-                                                    <tr>
-                                                        <td>12</td>
-                                                        <td>02-06-2018</td>
-                                                        <td>23° C</td>
-                                                        <td>36830</td>  
-                                                    </tr>
-                                                    <tr>
-                                                        <td>13</td>
-                                                        <td>02-06-2018</td>
-                                                        <td>23° C</td>
-                                                        <td>36830</td>  
-                                                    </tr>
-                                                    <tr>
-                                                        <td>14</td>
-                                                        <td>02-06-2018</td>
-                                                        <td>23° C</td>
-                                                        <td>36830</td>  
-                                                    </tr>
+                                                    <c:forEach items="${lisReg}" var="registrotemp">
+                                                        <option value="${registrotemp.idreg}" >
+                                                            <tr>
+                                                               <td>${registrotemp.idreg}</td>
+                                                               <td>${registrotemp.tmestamp}</td>
+                                                               <td>${registrotemp.temperatura}</td>
+                                                               <td>${registrotemp.idtermometro.nombre}</td>
+                                                               <td>${registrotemp.active}</td>
+                                                            </tr>    
+                                                        </option>
+                                                    </c:forEach>  
                                                     </tbody>
                                                 </table>
                                             </div>

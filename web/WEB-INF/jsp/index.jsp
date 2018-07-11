@@ -54,18 +54,25 @@
                             IN+
                         </div>
                     </li>-->
-                    <li class="active">
+                    <li>
                         <a href="index.htm"><i class="fa fa-th-large"></i> <span class="nav-label">Análisis</span> <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
                             <li><a href="histograma.htm">Histograma</a></li>
-                            <li><a href="tabladedatos.htm">Tabla de datos</a></li>
+                            <li><a href="registros.htm">Tabla de datos</a></li>
                             <li><a href="configuracion.htm">Configuración</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Mantenedor de Termómetros</span> <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li><a href="modificarTermometros.htm">Modificar</a></li>
+                            <li><a href="index.htm">Eliminar</a></li>
                         </ul>
                     </li>
                     <li>
                         <!--<a href="layouts.html"><i class="fa fa-diamond"></i> <span class="nav-label">Layouts</span></a>-->
                         <a href="<c:url value="agregarTermometro.htm" />">Agregar Termómetro</a><br />
-                        <a href="<c:url value="agregarUsuario.htm" />">Agregar Usuario</a><br />
+                        <a href="<c:url value="agregarUsuario.htm" />">Agregar Usuario</a><br />                        
                         <a href="<c:url value="login.htm" />">Log out</a><br />
                         
                         

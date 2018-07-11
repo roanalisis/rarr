@@ -18,10 +18,10 @@ import javax.validation.constraints.Size;
  * @author rodrigorr
  */
 public class TermometroDTO implements Serializable{
-    private Integer idTerm;
+    private Integer idterm;
     @Size(max = 50, message = "El largo del campo debe ser hasta 50.")
     private String clase;
-    @Size(max = 50, message = "El largo del campo debe ser hasta 50.")
+    @Size(max = 50, message = "El largo del campo debe ser hasta 1.")
     private String nombre;
     @NotNull(message = "La dirección IP no debe estar vacía.")
     @Size(min = 1, max = 15, message = "El largo del campo debe ser hasta 15.")
@@ -29,24 +29,30 @@ public class TermometroDTO implements Serializable{
     @Min(1)
     @Max(999999)
     private int dirpuerto;
+    @NotNull
+    private float rangomax;
+    @NotNull
+    private float rangomin;
 
     public TermometroDTO() {
     }
 
-    public TermometroDTO(Integer idTerm, String clase, String nombre, String dirip, int dirpuerto) {
-        this.idTerm = idTerm;
+    public TermometroDTO(Integer idterm, String clase, String nombre, String dirip, int dirpuerto, float rangomax, float rangomin) {
+        this.idterm = idterm;
         this.clase = clase;
         this.nombre = nombre;
         this.dirip = dirip;
         this.dirpuerto = dirpuerto;
+        this.rangomax = rangomax;
+        this.rangomin = rangomin;
     }
 
-    public Integer getIdTerm() {
-        return idTerm;
+    public Integer getIdterm() {
+        return idterm;
     }
 
-    public void setIdTerm(Integer idTerm) {
-        this.idTerm = idTerm;
+    public void setIdterm(Integer idterm) {
+        this.idterm = idterm;
     }
 
     public String getClase() {
@@ -81,7 +87,22 @@ public class TermometroDTO implements Serializable{
         this.dirpuerto = dirpuerto;
     }
 
-    
+    public float getRangomax() {
+        return rangomax;
+    }
+
+    public void setRangomax(float rangomax) {
+        this.rangomax = rangomax;
+    }
+
+    public float getRangomin() {
+        return rangomin;
+    }
+
+    public void setRangomin(float rangomin) {
+        this.rangomin = rangomin;
+    }
+
     
     
    

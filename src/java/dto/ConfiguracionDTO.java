@@ -92,6 +92,7 @@ public class ConfiguracionDTO implements Serializable{
         this.intervalos = intervalos;
     }
 
+
     public Integer getIdtermometro() {
         return idtermometro;
     }
@@ -99,6 +100,8 @@ public class ConfiguracionDTO implements Serializable{
     public void setIdtermometro(Integer idtermometro) {
         this.idtermometro = idtermometro;
     }
+
+    
 
     
     

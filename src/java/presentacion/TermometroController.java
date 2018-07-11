@@ -42,6 +42,8 @@ public class TermometroController {
                 model.addAttribute("nom",termometro.getNombre());
                 model.addAttribute("dip",termometro.getDirip());
                 model.addAttribute("dpu",termometro.getDirpuerto());
+                model.addAttribute("rmax",termometro.getRangomax());
+                model.addAttribute("rmin",termometro.getRangomin());
                 return "termometroCrear";
             } catch (UnexpectedRollbackException e) {
 //                if(e.getRootCause().getLocalizedMessage().indexOf("idcargo=0")!= -1){

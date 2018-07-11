@@ -1,6 +1,7 @@
 package dto;
 
 import java.io.Serializable;
+import javax.persistence.Embeddable;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;

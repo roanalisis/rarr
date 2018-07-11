@@ -32,9 +32,8 @@
     <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
         <property name="mappings">
             <props>
-                <prop key="index.htm">indexController</prop>
-                <prop key="histograma.htm">histogramaController</prop>
-                <prop key="tabladedatos.htm">tabladedatosController</prop>
+                <prop key="index.htm">indexController</prop>  
+                <prop key="traeTemperaturaPorId.htm">traeTemperaturaPorIdController</prop>                
             </props>
         </property>
     </bean>
@@ -51,13 +50,13 @@
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="index" />
     
-    <bean name="histogramaController"
+    <bean name="traeTemperaturaPorIdController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
-          p:viewName="histograma" />
+          p:viewName="traeTemperaturaPorId" />
     
-    <bean name="tabladedatosController"
-          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
-          p:viewName="tabladedatos" />
+    
+    
+    
     
     
     

@@ -40,13 +40,27 @@ public class ConsultaUsuarioController {
        }else{
            try {
                //model.addAttribute("mensaje","Denuncio ingresado con éxito.");
-               List<Usuario> usuarioList = servicio.DenucioByNombreUsuario(usuario.getNombreusuario());
+               //Busca primero por el Usuario 
+               List<Usuario> usuarioUList = servicio.BuscaByNombreUsuario(usuario.getNombreusuario());
+               boolean encontrado; 
+               if(!usuarioUList.isEmpty()) {
+                   encontrado = true;                   
+               }else{
+                   encontrado = false;
+               }               
+               
+               
+               List<Usuario> usuarioList = servicio.BuscaByNombreUsuarioyPassword(usuario.getNombreusuario(), usuario.getPasswordU());
                model.addAttribute("lsd", usuarioList);
                if(!usuarioList.isEmpty()) {
                    System.out.println(usuarioList);
                    return "index";
                } else {
-                   model.addAttribute("mensaje", "noencuentra");
+                   if (encontrado = true){
+                       model.addAttribute("mensaje", "Usuario o Password incorrectos.");
+                   }else{
+                       model.addAttribute("mensaje", "noencuentra");                       
+                   }    
                    return "loginUsuario";
                }
                

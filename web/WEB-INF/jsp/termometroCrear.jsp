@@ -217,8 +217,10 @@
                                     <form:form modelAttribute="termometro" method="post">                                        
                                         <strong>Dirección IP</strong><form:input id="dirip" path="dirip" type="dirip" placeholder="Ingrese la Dirección IP" class="form-control" /><form:errors path="dirip" /><br />
                                         <strong>Puerto</strong><form:input id="dirpuerto" path="dirpuerto" type="dirpuerto" placeholder="Ingrese el Puerto" class="form-control" /><form:errors path="dirpuerto" /><br />
-                                        <strong>Clase termómetro</strong><form:input id="clase" path="clase" type="clase" placeholder="Ingrese la clase" class="form-control" /><form:errors path="clase" /><br />            
+                                        <strong>Canal termómetro</strong><form:input id="clase" path="clase" type="clase" placeholder="Ingrese el canal" class="form-control" /><form:errors path="clase" /><br />            
                                         <strong>Nombre termómetro</strong><form:input id="nombre" path="nombre" type="clase" placeholder="Ingrese el nombre" class="form-control" /><form:errors path="nombre" /><br />           
+                                        <strong>Rango Máximo</strong><form:input id="rangomax" path="rangomax" type="rangomax" placeholder="Ingrese rango Máximo" class="form-control" /><form:errors path="rangomax" /><br />
+                                        <strong>Rango Mínimo</strong><form:input id="rangomin" path="rangomin" type="rangomin" placeholder="Ingrese rango Mínimo" class="form-control" /><form:errors path="rangomin" /><br />
                                         <div>
                                             <button class="btn btn-sm btn-primary pull-right m-t-n-xs" input type="submit" value="Registrar" ><strong>Registrar</strong> </button> 
                                         </div>                                        
@@ -236,12 +238,16 @@
                                         dirpuerto.value="";
                                         clase.value="";
                                         nombre.value="";
+                                        rangomax.value="";
+                                        rangomin.value="";
                                     </script>
                                     <div><strong><c:out value="${mensaje} " /></strong> </div>
                                     <div><c:out value="${cla} " /> </div>
                                     <div><c:out value="${nom} " /> </div>
                                     <div><c:out value="${dip} " /> </div>
                                     <div><c:out value="${dpu} " /> </div>
+                                    <div><c:out value="${rmax} " /> </div>
+                                    <div><c:out value="${rmin} " /> </div>
                                 </p>
                             </div> 
                         </div>
@@ -257,7 +263,7 @@
                 10GB of <strong>250GB</strong> Free.
             </div>
             <div>
-                <strong>Copyright</strong> Example Company &copy; 2014-2015
+                <strong>MMR</strong> &copy; 2018
             </div>
         </div>
 

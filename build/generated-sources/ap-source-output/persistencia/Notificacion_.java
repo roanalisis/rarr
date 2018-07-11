@@ -6,7 +6,7 @@ import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 import persistencia.Termometro;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2018-06-27T13:56:08")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2018-07-09T17:52:25")
 @StaticMetamodel(Notificacion.class)
 public class Notificacion_ { 
 

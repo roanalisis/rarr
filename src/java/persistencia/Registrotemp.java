@@ -32,9 +32,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Registrotemp.findAll", query = "SELECT r FROM Registrotemp r")
+    , @NamedQuery(name = "Registrotemp.findIdregMaxById", query =  "select max(r.idreg) from Registrotemp r where r.idtermometro = :idtermometro")  
     , @NamedQuery(name = "Registrotemp.findByIdreg", query = "SELECT r FROM Registrotemp r WHERE r.idreg = :idreg")
     , @NamedQuery(name = "Registrotemp.findByTmestamp", query = "SELECT r FROM Registrotemp r WHERE r.tmestamp = :tmestamp")
-    , @NamedQuery(name = "Registrotemp.findByTemperatura", query = "SELECT r FROM Registrotemp r WHERE r.temperatura = :temperatura")})
+    , @NamedQuery(name = "Registrotemp.findByTemperatura", query = "SELECT r FROM Registrotemp r WHERE r.temperatura = :temperatura")
+    , @NamedQuery(name = "Registrotemp.findByActive", query = "SELECT r FROM Registrotemp r WHERE r.active = :active")})
 public class Registrotemp implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -51,6 +53,10 @@ public class Registrotemp implements Serializable {
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Column(name = "temperatura")
     private Float temperatura;
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "active")
+    private boolean active;
     @JoinColumn(name = "idtermometro", referencedColumnName = "idterm")
     @ManyToOne(optional = false)
     private Termometro idtermometro;
@@ -62,9 +68,10 @@ public class Registrotemp implements Serializable {
         this.idreg = idreg;
     }
 
-    public Registrotemp(Integer idreg, Date tmestamp) {
+    public Registrotemp(Integer idreg, Date tmestamp, boolean active) {
         this.idreg = idreg;
         this.tmestamp = tmestamp;
+        this.active = active;
     }
 
     public Integer getIdreg() {
@@ -89,6 +96,14 @@ public class Registrotemp implements Serializable {
 
     public void setTemperatura(Float temperatura) {
         this.temperatura = temperatura;
+    }
+
+    public boolean getActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
     }
 
     public Termometro getIdtermometro() {
