@@ -8,7 +8,7 @@ import persistencia.Configuracion;
 import persistencia.Notificacion;
 import persistencia.Registrotemp;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2018-07-09T17:52:25")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2018-07-15T16:31:17")
 @StaticMetamodel(Termometro.class)
 public class Termometro_ { 
 

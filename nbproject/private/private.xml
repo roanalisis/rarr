@@ -12,15 +12,7 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/rodrigorr/NetBeansProjects/Adam6015/rarr/src/java/persistencia/Registrotemp.java</file>
-            <file>file:/home/rodrigorr/NetBeansProjects/Adam6015/rarr/web/WEB-INF/jsp/histogramaJSP.jsp</file>
-            <file>file:/home/rodrigorr/NetBeansProjects/Adam6015/rarr/src/java/persistencia/Termometro.java</file>
-            <file>file:/home/rodrigorr/NetBeansProjects/Adam6015/rarr/src/java/presentacion/HistogtamaController.java</file>
-            <file>file:/home/rodrigorr/NetBeansProjects/Adam6015/rarr/src/java/presentacion/traeUltimoRegistroServlet.java</file>
-            <file>file:/home/rodrigorr/NetBeansProjects/Adam6015/rarr/src/java/servicio/ServiceConsultaTermometros.java</file>
-            <file>file:/home/rodrigorr/NetBeansProjects/Adam6015/rarr/src/java/servicio/RegistrosDAO.java</file>
-            <file>file:/home/rodrigorr/NetBeansProjects/Adam6015/rarr/src/java/servicio/ServiceConsultaRegistros.java</file>
-            <file>file:/home/rodrigorr/NetBeansProjects/Adam6015/rarr/src/java/dto/RegistrotempDTO.java</file>
+            <file>file:/home/rodrigorr/NetBeansProjects/Adam6015/rarr/web/WEB-INF/jsp/tabladedatos.jsp</file>
         </group>
     </open-files>
 </project-private>

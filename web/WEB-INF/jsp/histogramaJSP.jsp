@@ -13,21 +13,14 @@
         <meta http-equiv="Content-Type"; charset=UTF-8">
         <title>JSP Page</title>
         
-
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
         <title>INSPINIA | Dashboard v.3</title>
-
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
-
         <!-- Morris -->
         <link href="css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet">
-
         <link href="css/animate.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
-
-
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
         <script src="https://code.highcharts.com/highcharts.js"></script>
         <script src="https://code.highcharts.com/modules/exporting.js"></script>
@@ -95,7 +88,6 @@
             // generate an array of random data
             var data = [],
                 time = (new Date()).getTime();
-
             for (var i = -19; i <= 0; i += 1) {
                 data.push({
                     x: time + i * 1000,
@@ -119,9 +111,7 @@
     </head>
 <body>
     <span id="lastTempS" style="display: none"><c:out value="${lastTemp}" /></span>
-
     <div id="wrapper">
-
     <nav class="navbar-default navbar-static-side" role="navigation">
         <div class="sidebar-collapse">
             <ul class="nav metismenu" id="side-menu">
@@ -153,7 +143,7 @@
                         </ul>
                 </li>
                 
-                <li>
+                <li class="active">
                         <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Modificar de Termómetros</span> <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
                             <li><a href="modificarTermometros.htm">Modificar</a></li>
@@ -275,7 +265,6 @@
                         <li><a href="badges_labels.html">Badges, Labels, Progress</a></li>
                     </ul>
                 </li>
-
                 <li>
                     <a href="grid_options.html"><i class="fa fa-laptop"></i> <span class="nav-label">Grid options</span></a>
                 </li>
@@ -302,7 +291,6 @@
                     <ul class="nav nav-second-level collapse">
                         <li><a href="basic_gallery.html">Lightbox Gallery</a></li>
                         <li><a href="carousel.html">Bootstrap Carusela</a></li>
-
                     </ul>
                 </li>
                 <li>
@@ -320,7 +308,6 @@
                                 <li>
                                     <a href="#">Third Level Item</a>
                                 </li>
-
                             </ul>
                         </li>
                         <li><a href="#">Second Level Item</a></li>
@@ -503,7 +490,7 @@
                                 <tr>                                     
                                     <td> 
                                         
-                                        <form:select id = "idterm" path="idterm">
+                                        <form:select onchange="buscar();" id = "idterm" path="idterm">
                                             <c:if test="${mensaje=='noencuentra'}">                                 
                                                 <form:option value="0" label="--- Select ---"/> 
                                             </c:if>
@@ -519,10 +506,10 @@
                                     <td> 
                                         
                                     </td>
-                                    <td> 
+<!--                                    <td> 
                                         <button class="btn btn-sm btn-primary pull-right m-t-n-xs" input type="button" value="Buscar" onclick="buscar();"><strong>Buscar</strong> </button> 
                                         
-                                    </td>         
+                                    </td>         -->
 
                                 </tr>                                    
                             </tbody>
@@ -579,10 +566,9 @@
     <script src="js/demo/flot-demo.js"></script>
     <script>
         
-
 //float tem = (float)session.getAttribute("tem");
-      
 
+    
     
     
     
@@ -592,9 +578,7 @@ Highcharts.setOptions({
         useUTC: false
     }
 });
-
      
-
 Highcharts.chart('container', {
     chart: {
         type: 'spline',
@@ -654,7 +638,6 @@ Highcharts.chart('container', {
             // generate an array of random data
             var data = [],
                 time = (new Date()).getTime();
-
             for (var i = -19; i <= 0; i += 1) {
                 data.push({
                     x: time + i * 1000,

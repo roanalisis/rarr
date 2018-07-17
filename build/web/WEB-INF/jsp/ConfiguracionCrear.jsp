@@ -39,7 +39,7 @@
                         </ul>
                 </li>
                 
-                <li>
+                <li class="active">
                     <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Mantenedor de Termómetros</span> <span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">
                         <li><a href="modificarTermometros.htm">Modificar</a></li>
