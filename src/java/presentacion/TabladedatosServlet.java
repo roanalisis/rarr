@@ -7,8 +7,17 @@ package presentacion;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.math.BigDecimal;
 import java.util.List;
+import javax.json.Json;
+import static javax.json.Json.createObjectBuilder;
+import javax.json.JsonArray;
+import javax.json.JsonArrayBuilder;
+import javax.json.JsonObject;
+import javax.json.JsonObjectBuilder;
+import javax.json.JsonValue;
 import javax.servlet.ServletException;
+import javax.servlet.ServletOutputStream;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -23,6 +32,7 @@ import servicio.TabladatosDAO;
  */
 @WebServlet(name = "TabladedatosServlet", urlPatterns = {"/TabladedatosServlet"})
 public class TabladedatosServlet extends HttpServlet {
+    
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -33,19 +43,39 @@ public class TabladedatosServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        String idterm = request.getParameter("idterm");
+            throws ServletException, IOException {               
+        
+        
         //ServiceConsultaRegistros buscaUltIdRegPorId = new ServiceConsultaRegistros();
         TabladatosDAO buscar = new TabladatosDAO();
-        try {
-            int id = idterm.equals("") ? 0 : Integer.parseInt(idterm);
-            int registros = buscar.BuscaTodasTemperaturaPorid(id); 
-            String objectToReturn = "{ \"temps\": \""+ registros+"\"}"; 
+        try {                          
             
-            response.setContentType( "application/json" );
-                try(PrintWriter out = response.getWriter()){
-                    out.println(objectToReturn);
-                }
+
+            ServletOutputStream out = response.getOutputStream();
+            List<Registrotemp> registros = buscar.BuscaTodasLasTemperaturas();
+            
+            
+            response.setContentType("application/json;charset=UTF-8");            
+            JsonObjectBuilder rootBuilder = Json.createObjectBuilder();            
+            JsonArrayBuilder arrayBuilder = Json.createArrayBuilder();
+            
+            for (Registrotemp registro : registros) {
+                JsonObjectBuilder registroBuilder = Json.createObjectBuilder();
+                JsonObject registroJson = registroBuilder.add("idr", registro.getIdreg())
+                .add("fecHora", (JsonValue) registro.getTmestamp())
+                .add("temperatura", registro.getTemperatura())
+                .add("nombre", registro.getIdreg())
+                .add("activo", registro.getActive())
+                .build();      
+                
+                arrayBuilder.add(registroJson);
+            }
+            
+            JsonObject root = rootBuilder.add("registros", arrayBuilder).build();
+            out.println("root"+ root);
+            System.out.println("¨¨¨¨¨¨¨¨¨*************¨¨¨¨¨¨¨¨**************** "+ root);
+   
+            
         } catch (Exception e) {
             System.out.println("mensaje:"+ e.getMessage());
         }

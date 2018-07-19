@@ -460,7 +460,7 @@
                             <a href="index.html">Home</a>
                         </li>
                         <li>
-                            <a>aNÁLISIS</a>
+                            <a>Análisis</a>
                         </li>
                         <li class="active">
                             <strong>Flot Charts</strong>
@@ -522,11 +522,11 @@
                         
                         
                         
-                        <div class="ibox-content">
+<!--                        <div class="ibox-content">
                             <div class="flot-chart">
                                 <div class="flot-chart-content" id="flot-line-chart-multi"></div>
                             </div>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
             </div>

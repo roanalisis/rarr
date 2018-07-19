@@ -35,8 +35,7 @@
     <nav class="navbar-default navbar-static-side" role="navigation">
         <div class="sidebar-collapse">
             <ul class="nav metismenu" id="side-menu">
-  <
-                <li>
+                <li class="active">
                         <a href="index.htm"><i class="fa fa-th-large"></i> <span class="nav-label">Análisis</span> <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
                             <li><a href="histograma.htm">Histograma</a></li>
@@ -304,7 +303,7 @@
                                         <tbody>
                                          
                                         <c:forEach items="${lisTerm}" var="termometro">
-                                            <option value="${termometro.idterm}" >
+                                            <option value="${termometro.idterm}" ></option>
                                                 <tr>
                                                    <td>${termometro.idterm}</td>
                                                    <td>${termometro.dirip}</td>
@@ -313,8 +312,7 @@
                                                    <td>${termometro.nombre}</td>
                                                    <td>${termometro.rangomax}</td>
                                                    <td>${termometro.rangomin}</td>
-                                                </tr>    
-                                            </option>
+                                                </tr>                                                
                                         </c:forEach>  
 
                                         </tbody>

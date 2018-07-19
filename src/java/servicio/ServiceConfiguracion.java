@@ -50,4 +50,14 @@ public class ServiceConfiguracion {
         
     }
     
+    
+    public List<Configuracion> buscarConfiguraciones() throws ServiceException{
+        Query q = em.createNamedQuery("Configuracion.findAll");
+        List<Configuracion> configuracionList = q.getResultList();        
+        return configuracionList; 
+    }
+    
+    
+    
+    
 }

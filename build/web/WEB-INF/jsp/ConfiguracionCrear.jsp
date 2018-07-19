@@ -29,7 +29,6 @@
     <nav class="navbar-default navbar-static-side" role="navigation">
         <div class="sidebar-collapse">
             <ul class="nav metismenu" id="side-menu">
-  <
                 <li class="active">
                         <a href="index.htm"><i class="fa fa-th-large"></i> <span class="nav-label">Análisis</span> <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
@@ -269,9 +268,85 @@
                                 </p>
                             </div> 
                         </div>
-                    </div>
+                    </div>    
                 </div>
             </div>
+                                
+                                
+                <div class="col-lg-5">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>Configuraciones</h5>
+                            <!--<div class="ibox-tools">-->
+<!--                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>-->
+<!--                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <i class="fa fa-wrench"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-user">
+                                    <li><a href="#">Config option 1</a>
+                                    </li>
+                                    <li><a href="#">Config option 2</a>
+                                    </li>
+                                </ul>-->
+<!--                                <a class="close-link">
+                                    <i class="fa fa-times"></i>
+                                </a>-->
+                            <!--</div>-->
+                        </div>
+                        <div class="ibox-content">
+                            <form class="form-horizontal">
+                                <!--<p>Sign in today for more expirience.</p>-->
+                                
+                                <div class="col-lg-0">                                    
+                                    <!--<div class="ibox float-e-margins">-->
+                                    <div class="table-responsive">                                            
+                                    <div class="ibox-content">
+                                    <table id="table" class="table table-hover no-margins">
+                                        <thead>
+                                        <tr>
+
+                                            <th>Id Configuración </th>
+                                            <th>Nombre temómetro </th>
+                                            <th>Temp Máx </th>   
+                                            <th>Temp Mín </th> 
+                                            <th>Intervalo h </th>  
+                                            <th>Intervalo m </th> 
+                                            <th>Intervalo s </th>  
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                         
+                                        <c:forEach items="${listConfiguraciones}" var="configuracion">
+                                            <option value="${configuracion.idconf}" ></option>
+                                                <tr>
+                                                   <td>${configuracion.idconf}</td>
+                                                   <td>${configuracion.idtermometro.nombre}</td>
+                                                   <td>${configuracion.maxim}</td>
+                                                   <td>${configuracion.minim}</td>
+                                                   <td>${configuracion.intervaloh}</td>
+                                                   <td>${configuracion.intervalom}</td>
+                                                   <td>${configuracion.intervalos}</td>
+                                                </tr>                                                
+                                        </c:forEach>  
+
+                                        </tbody>
+                                    </table>
+                                        
+                                    </div>
+                                    </div>
+                                </div>
+                                
+                                
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                                
+                                
+                                
+                                
      
             </div>
      

@@ -19,15 +19,42 @@
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(window).load(function() {
+            $(".loader").fadeOut("slow");
+        });
+    </script>
+    
+    
     <!--jquery.dataTables.min-->
     <link href="css/DataTables/datatables.css" rel="stylesheet">
     <!--<link rel="stylesheet" href="http://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">-->
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <!--<script src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>-->
     <script src="js/DataTables/datatables.js"></script>
+ 
+    <style>
+        .loader {
+            position: fixed;
+            left: 221px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background: url('img/page-loader.gif') 40% 40% no-repeat rgb(249,249,249);
+            opacity: 1.9;
+        }
+    </style>
+    
     
 </head>
-    <body class="fixed-navigation">        
+    <body class="fixed-navigation">
+        <div class="loader">CARGANDO...</div>        
+
+        
         <div id="wrapper">
         <nav class="navbar-default navbar-static-side" role="navigation">
             <div class="sidebar-collapse">
@@ -65,7 +92,7 @@
             <div class="row border-bottom">
             <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
-<!--                <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>-->
+                <!--<a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>-->
                 <form role="search" class="navbar-form-custom" action="search_results.html">
 <!--                    <div class="form-group">
                         <input type="text" placeholder="Search for something..." class="form-control" name="top-search" id="top-search">
@@ -187,13 +214,35 @@
 
             </nav>
             </div>
+                
+                <div class="row wrapper border-bottom white-bg page-heading">
+                    <div class="col-lg-10">
+                        <h2>Tabla de datos</h2>
+                        <ol class="breadcrumb">
+                            <li>
+                                <a href="index.html">Home</a>
+                            </li>
+                            <li>
+                                <a>Análisis</a>
+                            </li>
+                            <li class="active">
+                                <strong>Tabla de datos</strong>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="col-lg-2">
 
-                <div class="wrapper wrapper-content">
-                    <div class="row">
+                    </div>
+                </div>
+                
+
+                <div class="wrapper wrapper-content">                    
+                    <div class="row">                        
                         <div class="col-lg-12">
+                        <div class="table-responsive">                             
                             <div class="ibox float-e-margins">
-                                <div class="ibox-content">
-                                        <!--<div>-->                                                              
+                                <!--<div class="ibox-content">-->
+                                        <!--<div>-->                                         
                                             <table id="example" class="display" style="width:100%">
                                                 <thead>
                                                     <tr>
@@ -205,7 +254,7 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <option value="${registrotemp.idreg}" >  
+                                                <option value="${registrotemp.idreg}" > </option> 
                                                     <c:forEach items="${lisReg}" var="registrotemp">
                                                         <tr>                                                                                                                  
                                                                <td>${registrotemp.idreg}</td>
@@ -227,18 +276,17 @@
                                                     </tr>
                                                 </tfoot>
                                             </table>
+                                            
 <!--                                            <small>Sales marketing.</small>-->
                                         <!--</div>-->
-
-                                </div>
-                            </div>
-<!--                        </div>-->
+                                        
+                                <!--</div>-->
+                            <!--</div>-->
+                        </div>
                     </div>
-
-
-
-
+                    </div>
                 </div>
+                                                    
             <div class="footer">
                 <div class="pull-right">
 <!--                    10GB of <strong>250GB</strong> Free.-->
@@ -250,7 +298,7 @@
             </div>
 
         </div>
-          
+        </div>  
         <!--<script type="text/javascript" charset="utf8" src="js/DataTables/datatables.js"></script>-->        
 
 
@@ -293,37 +341,34 @@
         <script src="js/demo/sparkline-demo.js"></script>
 
         <!-- ChartJS-->
-        <script src="js/plugins/chartJs/Chart.min.js"></script>
+        <script src="js/plugins/chartJs/Chart.min.js"></script>   
+        
         
         <script type="text/javascript">
-            
-            $(document).ready(function() {                
-                // Setup - add a text input to each footer cell
-                $('#example tfoot th').each( function () {
-                    var title = $(this).text();
-                    $(this).html( '<input type="text" placeholder="Buscar '+title+'" />' );                    
-                } );
-
-                // DataTable
-                var table = $('#example').DataTable();
-
-                // Apply the search
-                table.columns().every( function () {
-                    var that = this;
-
-                    $( 'input', this.footer() ).on( 'keyup change', function () {
-                        if ( that.search() !== this.value ) {
-                            that
-                                .search( this.value )
-                                .draw();                        
-                        }
-                    } );                                   
-                } );
-            } );
-
+                    $(document).ready(function() {                
+                        // Setup - add a text input to each footer cell
+                        $('#example tfoot th').each( function () {
+                            var title = $(this).text();
+                            $(this).html( '<input type="text" placeholder="Buscar '+title+'" />' );                    
+                        } );
+                        // DataTable
+                        var table = $('#example').DataTable();
+                        // Apply the search
+                        table.columns().every( function () {
+                            var that = this;
+                            $( 'input', this.footer() ).on( 'keyup change', function () {
+                                if ( that.search() !== this.value ) {
+                                    that
+                                        .search( this.value )
+                                        .draw();                        
+                                }
+                            } );                                   
+                        } );
+                    } );
         </script>
-
+        
         
     </body>
+    
     
 </html>

@@ -66,15 +66,6 @@ public class ConsultaUsuarioController {
                
                
            } catch (UnexpectedRollbackException e) {                              
-//                if(e.getRootCause().getLocalizedMessage().indexOf("rutliquidador=0")!= -1){
-//                    model.addAttribute("erR","No ha seleccionado el RUT del liquidador.");                
-//                }else{
-//                    if(e.getRootCause().getLocalizedMessage().indexOf("rutemp=0")!= -1){
-//                        model.addAttribute("erR","No ha seleccionado la empresa asistente.");  
-//                    }else{
-//                        model.addAttribute("erR","¡Siniestro ya existe!");                     
-//                    }                
-//                }
                
                model.addAttribute("erR",e.getRootCause().getLocalizedMessage());
 

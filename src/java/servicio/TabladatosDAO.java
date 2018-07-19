@@ -25,18 +25,6 @@ public class TabladatosDAO {
         em = emf.createEntityManager();
     }
     
-    public int BuscaTodasTemperaturaPorid(int id){
-//        Query q = em.createQuery("select r from Registrotemp r where r.idtermometro.idterm = :idtermometro ORDER BY r.tmestamp DESC");
-//        q.setParameter("idreg", id);
-//        List cargaList = q.getResultList(); 
-//        return cargaList;
-        Query q = em.createQuery("select max(r.idreg) from Registrotemp r where r.idtermometro.idterm = :idtermometro");
-        q.setParameter("idtermometro", id);
-        int valor = (int) q.getSingleResult(); 
-  
-
-        return valor; 
-    }
     
     
     public List<Registrotemp> BuscaTodasLasTemperaturas(){

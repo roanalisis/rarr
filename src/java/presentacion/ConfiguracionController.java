@@ -26,10 +26,11 @@ public class ConfiguracionController {
 
    
    @RequestMapping(method=RequestMethod.GET)
-   public String consultar(Model model){
+   public String consultar(Model model) throws ServiceException{
        ConfiguracionDTO configuracion = new ConfiguracionDTO();
        model.addAttribute("configuracion", configuracion);
        model.addAttribute("lisTerm", servicioCons.listarTermometros());
+       model.addAttribute("listConfiguraciones", servicio.buscarConfiguraciones());
          
        return "ConfiguracionCrear";  
    }
