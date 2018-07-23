@@ -134,29 +134,15 @@
                         IN+
                     </div>
                 </li>-->
-                <li class="active">
-                        <a href="index.htm"><i class="fa fa-th-large"></i> <span class="nav-label">Análisis</span> <span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level collapse">
-                            <li class="active"><a href="histograma.htm">Histograma</a></li>
-                            <li ><a href="registros.htm">Tabla de datos</a></li>
-                            <li ><a href="configuracion.htm">Configuración</a></li>
-                        </ul>
-                </li>
+                <li class = "active"><a><p style="color:#33FF63";>Análisis</p> </a> </li>                        
+                    <li class = "active"><a href="histograma.htm">Histograma</a></li>
+                    <li><a href="registros.htm">Tabla de datos</a></li>
+
+
+                <li class = "active"><a><p style="color:#33FF63";>Usuarios</p> </a> </li>    
+                    <li><a href="<c:url value="agregarUsuario.htm" />">Agregar Usuario</a>  </li>                    
+                <li class = "active"><a href="<c:url value="login.htm" />"><p style="color:#33FF63";>Log out</p></a></li>
                 
-                <li class="active">
-                        <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Modificar de Termómetros</span> <span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level collapse">
-                            <li><a href="modificarTermometros.htm">Modificar</a></li>
-                            <li><a href="index.htm">Eliminar</a></li>
-                        </ul>
-                </li>
-                
-                <li>
-                    <!--<a href="layouts.html"><i class="fa fa-diamond"></i> <span class="nav-label">Layouts</span></a>-->
-                    <a href="<c:url value="agregarTermometro.htm" />">Agregar Termómetro</a><br />
-                    <a href="<c:url value="agregarUsuario.htm" />">Agregar Usuario</a><br />
-                    <a href="<c:url value="login.htm" />">Log out</a><br />
-                </li>
 <!--                <li class="active">
                     <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Graphs</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">

@@ -24,7 +24,14 @@
         
         
     </head>
+    
+    
+    
     <body class="gray-bg">
+        
+        <div style="float:right"> <p class="font-bold" style="color:#338EFF";> <a href="loginConfigurador.htm">Configuración </a> &nbsp;</p></div>
+        
+        
         <div class="loginColumns animated fadeInDown">
         <div class="row">
 
@@ -97,7 +104,7 @@
                     
                     
                     <p class="m-t">
-                        <small>MMR - Bootstrap 3 &copy; 2014</small>
+                        <small>MMR/UGM&copy; 2018</small>
                     </p>
                 </div>
             </div>

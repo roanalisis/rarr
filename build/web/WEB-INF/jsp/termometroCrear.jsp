@@ -35,23 +35,15 @@
     <nav class="navbar-default navbar-static-side" role="navigation">
         <div class="sidebar-collapse">
             <ul class="nav metismenu" id="side-menu">
-  <
-                <li class="active">
-                    <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">Agregar Termómetro</span></a>
-                    <!--<ul class="nav nav-second-level collapse">
-                        <li class="active"><a href="form_basic.html">Basic form</a></li>
-                        <li><a href="form_advanced.html">Advanced Plugins</a></li>
-                        <li><a href="form_wizard.html">Wizard</a></li>
-                        <li><a href="form_file_upload.html">File Upload</a></li>
-                        <li><a href="form_editors.html">Text Editor</a></li>
-                    </ul>-->
-                </li>
-
-                
-                <li>
-                    <a href="<c:url value="index.htm" />">Home</a><br />
-                </li>
-                
+  
+                <li class = "active"><a><p style="color:#33FF63";>Configuración</p> </a> </li>
+                    <!--<a href="layouts.html"><i class="fa fa-diamond"></i> <span class="nav-label">Layouts</span></a>-->
+                    <li><a href="configuracion.htm">Configuración Termómetro</a></li>
+                    <li><a href="modificarTermometros.htm">Modificar</a></li>
+                    <li class = "active"><a href="agregarTermometro.htm">Agregar Termómetro</a></li>
+                    <li><a href="#">Eliminar</a></li>  
+                    <li><a href="<c:url value="agregarUsuario.htm" />">Agregar Usuario</a>  </li>                    
+                <li class = "active"><a href="<c:url value="login.htm" />"><p style="color:#33FF63";>Log out</p></a></li>                
                 
             </ul>
 

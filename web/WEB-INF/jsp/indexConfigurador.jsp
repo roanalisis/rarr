@@ -1,3 +1,9 @@
+<%-- 
+    Document   : indexConfigurador
+    Created on : Jul 23, 2018, 4:22:29 PM
+    Author     : rodrigorr
+--%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
@@ -51,16 +57,13 @@
                             IN+
                         </div>
                     </li>-->
-                    
-                    
-                    
-                    
-                    <li class = "active"><a><p style="color:#33FF63";>Análisis</p> </a> </li>                        
-                        <li><a href="histograma.htm">Histograma</a></li>
-                        <li><a href="registros.htm">Tabla de datos</a></li>
-                        
-
-                    <li class = "active"><a><p style="color:#33FF63";>Usuarios</p> </a> </li>    
+                 
+                    <li class = "active"><a><p style="color:#33FF63";>Configuración</p> </a> </li>
+                        <!--<a href="layouts.html"><i class="fa fa-diamond"></i> <span class="nav-label">Layouts</span></a>-->
+                        <li><a href="configuracion.htm">Configuración Termómetro</a></li>
+                        <li><a href="modificarTermometros.htm">Modificar</a></li>
+                        <li><a href="agregarTermometro.htm">Agregar Termómetro</a></li>
+                        <li><a href="#">Eliminar</a></li>  
                         <li><a href="<c:url value="agregarUsuario.htm" />">Agregar Usuario</a>  </li>                    
                     <li class = "active"><a href="<c:url value="login.htm" />"><p style="color:#33FF63";>Log out</p></a></li>
                         
@@ -1446,3 +1449,4 @@
         
     </body>
 </html>
+
