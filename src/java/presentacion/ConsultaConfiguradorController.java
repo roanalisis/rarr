@@ -57,7 +57,7 @@ public class ConsultaConfiguradorController {
                    return "loginConfigurador"; 
                }else{
                    model.addAttribute("mensaje", "Encontrado"); 
-                   return "indexConfigurador"; 
+                   return "loginConfigurador"; 
                }
                
                

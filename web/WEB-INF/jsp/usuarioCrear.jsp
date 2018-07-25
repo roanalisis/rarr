@@ -7,6 +7,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type"; charset=UTF-8">
+        <%@page session="true"%>
         <title>JSP Page</title>
         
         <meta charset="utf-8">
@@ -19,6 +20,27 @@
         <link href="css/plugins/iCheck/custom.css" rel="stylesheet">
         <link href="css/animate.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
+        
+        
+        <script>
+                function determina() {  
+                    <%
+                    HttpSession s = request.getSession();                    
+                    %>
+
+                    var ni = '<%= (String)s.getAttribute("nombreIndex") %>';
+                    console.log(ni);
+                    if (ni == 'index'){
+                        location.href='index.htm';                        
+                    }else{                        
+                        location.href='indexConfigurador.htm';                        
+                    }
+                }
+        </script>
+        
+        
+        
+        
     </head>
     <body class="gray-bg">
         <div class="middle-box text-center loginscreen   animated fadeInDown">
@@ -59,10 +81,23 @@
                     </c:if>
                     
                     
-                    
-                    
                     <p class="text-muted text-center"><small>¿Ya tienes una cuenta?</small></p>
                     <a class="btn btn-sm btn-white btn-block" href="login.htm">Login</a>  
+                    
+                    
+                    <% 
+//                        HttpSession s = request.getSession();
+//                        //Crear variables de session
+//                        String nombreindex = (String)s.getAttribute("nombreIndex");
+//                        
+//                        if (nombreindex.equals("index")){
+//                            response.sendRedirect("index.htm");
+//                        }else{
+//                            response.sendRedirect("indexConfigurador.htm");
+//                        }
+                    %>
+                    <a class="btn btn-sm btn-white btn-block" href="#" onclick="determina();">home</a> 
+                    
                     
                 </form:form> 
 

@@ -39,36 +39,20 @@ public class ConsultaUsuarioController {
            return "loginUsuario";
        }else{
            try {
-               //model.addAttribute("mensaje","Denuncio ingresado con éxito.");
-               //Busca primero por el Usuario 
-               List<Usuario> usuarioUList = servicio.BuscaByNombreUsuario(usuario.getNombreusuario());
-               boolean encontrado; 
-               if(!usuarioUList.isEmpty()) {
-                   encontrado = true;                   
-               }else{
-                   encontrado = false;
-               }               
-               
-               
                List<Usuario> usuarioList = servicio.BuscaByNombreUsuarioyPassword(usuario.getNombreusuario(), usuario.getPasswordU());
                model.addAttribute("lsd", usuarioList);
-               if(!usuarioList.isEmpty()) {
+               if(usuarioList.isEmpty()) {
                    System.out.println(usuarioList);
-                   return "index";
-               } else {
-                   if (encontrado = true){
-                       model.addAttribute("mensaje", "Usuario o Password incorrectos.");
-                   }else{
-                       model.addAttribute("mensaje", "noencuentra");                       
-                   }    
+                   model.addAttribute("mensaje", "Usuario o Password incorrectos.");
                    return "loginUsuario";
+               }else{
+                   model.addAttribute("mensaje", "Encontrado"); 
+                   return "loginUsuario"; 
                }
                
                
-           } catch (UnexpectedRollbackException e) {                              
-               
+           } catch (UnexpectedRollbackException e) {                  
                model.addAttribute("erR",e.getRootCause().getLocalizedMessage());
-
                return "loginUsuario";
            }
        }

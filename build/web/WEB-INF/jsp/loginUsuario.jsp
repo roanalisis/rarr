@@ -21,14 +21,12 @@
         <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
         <link href="css/animate.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
-        
-        
+
     </head>
     
     
     
     <body class="gray-bg">
-        
         <div style="float:right"> <p class="font-bold" style="color:#338EFF";> <a href="loginConfigurador.htm">Configuración </a> &nbsp;</p></div>
         
         
@@ -71,31 +69,31 @@
                             <form:input path="nombreusuario" type="nombreusuario" placeholder="Nombre usuario" class="form-control" required="" />
                             <form:errors path="nombreusuario" /><br />                    
                         </div>
-                        <div class="form-group">
+<!--                        <div class="form-group">
                             <form:input path="mail" type="email" placeholder="Email" class="form-control" required="" />
                             <form:errors path="mail" /><br />
-                        </div>
+                        </div>-->
                         <div class="form-group">
                             <form:input path="passwordU" type="password" placeholder="Password" class="form-control" required="" />
                             <form:errors path="passwordU" /><br />                      
                         </div>                    
 
                         <button input type="submit" class="btn btn-primary block full-width m-b">Login</button>
-                        
-                        <c:if test="${mensaje=='noencuentra'}">                                 
-                            <% response.sendRedirect("agregarUsuario.htm"); %> 
-                        </c:if>
 
                         <c:if test="${mensaje=='Usuario o Password incorrectos.'}"> 
                         <a href="#">
                                 <small>Usuario o Password incorrectos.</small>
                         </a>
                         </c:if>
+                        
+                        <c:if test="${mensaje=='Encontrado'}">                                 
+                            <% response.sendRedirect("index.htm"); %> 
+                        </c:if>
 
                         <p class="text-muted text-center">
                             <small>¿No tiene una cuenta?</small>
                         </p>
-                        <a class="btn btn-sm btn-white btn-block" href="agregarUsuario.htm">Crear una cuenta</a>
+                        <!--<a class="btn btn-sm btn-white btn-block" href="agregarUsuario.htm">Crear una cuenta</a>-->
                     
                     </form:form> 
                     

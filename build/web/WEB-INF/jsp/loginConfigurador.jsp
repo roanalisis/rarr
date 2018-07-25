@@ -23,6 +23,27 @@
 
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    
+    
+    
+    <script>
+        var gloDato;
+        function enviar() {                                    
+            var nomu = $('#nombreusuario').val();
+            $.post('EnviarCorreoServlet', {
+                nomu: nomu
+            }, function (responseText) {
+                        tems = parseFloat(responseText.temps);
+                console.log(tems);
+                gloDato = tems;                                        
+            });
+
+        }
+
+    </script>
+    
+    
+    
 
 </head>
 
@@ -44,7 +65,7 @@
             
             <form:form modelAttribute="configurador" method="post" class="m-t" role="form">
                 <div class="form-group">
-                    <form:input path="nombreusuario" type="text" placeholder="Nombre usuario" class="form-control" required="" />
+                    <form:input id = "nombreusuario" path="nombreusuario" type="text" placeholder="Nombre usuario" class="form-control" required="" />
                     <form:errors path="nombreusuario" /><br />                    
                 </div>                
                 <div class="form-group">
@@ -60,9 +81,15 @@
                         <small>Usuario o Password incorrectos.</small>
                     </a>
                 </c:if>
-                <a href="#"><small>¿Olvidó su Password?</small></a>
-                <p class="text-muted text-center"><small>¿No tiene una cuenta?</small></p>
-                <a class="btn btn-sm btn-white btn-block" href="agregarUsuario.htm">Crear una cuenta</a>
+                
+                <c:if test="${mensaje=='Encontrado'}">                                 
+                    <% response.sendRedirect("indexConfigurador.htm"); %> 
+                </c:if>
+                
+                             
+                <a href="#" onclick="enviar();"><small>Enviar Password al correo.</small></a>
+                <!--<p class="text-muted text-center"><small>¿No tiene una cuenta?</small></p>-->
+                <!--<a class="btn btn-sm btn-white btn-block" href="agregarUsuario.htm">Crear una cuenta</a>-->
 
             </form:form> 
             
