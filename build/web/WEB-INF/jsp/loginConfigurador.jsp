@@ -31,11 +31,8 @@
         function enviar() {                                    
             var nomu = $('#nombreusuario').val();
             $.post('EnviarCorreoServlet', {
-                nomu: nomu
-            }, function (responseText) {
-                        tems = parseFloat(responseText.temps);
-                console.log(tems);
-                gloDato = tems;                                        
+                nomu: nomu,
+                vienede: '1'
             });
 
         }
@@ -70,7 +67,7 @@
                 </div>                
                 <div class="form-group">
                     <form:input path="password" type="password" placeholder="Password" class="form-control" required="" />
-                    <form:errors path="password" /><br />                      
+                    <form:errors path="password" /><br />                       
                 </div>                    
 
                 <button input type="submit" class="btn btn-primary block full-width m-b">Login</button>

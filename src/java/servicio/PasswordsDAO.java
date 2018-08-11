@@ -11,6 +11,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 import persistencia.Configurador;
+import persistencia.Usuario;
 
 /**
  *
@@ -32,6 +33,13 @@ public class PasswordsDAO {
         Query q = em.createQuery("SELECT c FROM Configurador c WHERE c.nombreusuario = :nombreusuario");
         q.setParameter("nombreusuario", nombreusuario);
         List<Configurador> cargaList = q.getResultList(); 
+        return cargaList;
+    }
+    
+    public List<Usuario> BuscaPass_y_Correo_de_Usuario(String nombreusuario){        
+        Query q = em.createQuery("SELECT u FROM Usuario u WHERE u.nombreusuario = :nombreusuario");
+        q.setParameter("nombreusuario", nombreusuario);
+        List<Usuario> cargaList = q.getResultList(); 
         return cargaList;
     }
     

@@ -60,17 +60,15 @@
                     </li>-->
                     
                     
-                    
-                    
-                    <li class = "active"><a><p style="color:#33FF63";>Análisis</p> </a> </li>                        
-                        <li><a href="histograma.htm">Histograma</a></li>
-                        <li><a href="registros.htm">Tabla de datos</a></li>
+                     
+                    <li class = "active"><a><p style="color:#33FF63";><i class="fa fa-flask"></i> <span class="nav-label">Análisis</span></p></a></li>    
+                        <li><a href="histograma.htm"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Histograma</span></a></li>
+                        <li><a href="registros.htm"><i class="fa fa-table"></i> <span class="nav-label">Tabla de datos</span></a></li>
                         
-
-                    <li class = "active"><a><p style="color:#33FF63";>Usuarios</p> </a> </li>    
-                        <li><a href="<c:url value="agregarUsuario.htm" />">Agregar Usuario</a>  </li>                    
-                    <li class = "active"><a href="<c:url value="login.htm" />"><p style="color:#33FF63";>Log out</p></a></li>
-                        
+                    <li class = "active"><a><p style="color:#33FF63";><i class="fa fa-users"></i> <span class="nav-label">Usuarios</span></p></a></li>         
+                        <li><a href="<c:url value="agregarUsuario.htm" />"><i class="fa fa-user"></i> <span class="nav-label">Agregar Usuario</span></a></li>
+                    
+                    <li class = "active"><a href="<c:url value="login.htm" />"><p style="color:#33FF63";><i class="fa fa-sign-out"></i> <span class="nav-label">Log out</span></p></a></li>             
                     
                     <!--<li>
                         <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Graphs</span><span class="fa arrow"></span></a>

@@ -33,8 +33,7 @@
         <property name="mappings">
             <props>
                 <prop key="index.htm">indexController</prop>  
-                <prop key="indexConfigurador.htm">indexConfiguradorController</prop>  
-                <prop key="traeTemperaturaPorId.htm">traeTemperaturaPorIdController</prop>                
+                <prop key="indexConfigurador.htm">indexConfiguradorController</prop>            
             </props>
         </property>
     </bean>
@@ -54,14 +53,6 @@
     <bean name="indexConfiguradorController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="indexConfigurador" />
-    
-    <bean name="traeTemperaturaPorIdController"
-          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
-          p:viewName="traeTemperaturaPorId" />
-    
-    
-    
-    
     
     
     

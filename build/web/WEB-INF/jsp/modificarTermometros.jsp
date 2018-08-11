@@ -176,7 +176,7 @@
                     <h2>Modificar Termómetros</h2>
                     <ol class="breadcrumb">
                         <li>
-                            <a href="index.htm">Home</a>
+                            <a href="indexConfigurador.htm">Home</a>
                         </li>
                         <!--<li>
                             <a>Forms</a>

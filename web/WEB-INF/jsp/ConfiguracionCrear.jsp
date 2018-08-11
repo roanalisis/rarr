@@ -170,10 +170,10 @@
                     <h2>Configuración</h2>
                     <ol class="breadcrumb">
                         <li>
-                            <a href="index.htm">Home</a>
+                            <a href="indexConfigurador.htm">Home</a>
                         </li>                        
                         <li class="active">
-                            <strong>Configuración</strong>
+                            <strong>Configuración Termómetro</strong>
                         </li>
                     </ol>
                 </div>
@@ -254,7 +254,7 @@
                 <div class="col-lg-5">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5>Configuraciones</h5>
+                            <h5>Configuraciones realizadas</h5>
                             <!--<div class="ibox-tools">-->
 <!--                                <a class="collapse-link">
                                     <i class="fa fa-chevron-up"></i>

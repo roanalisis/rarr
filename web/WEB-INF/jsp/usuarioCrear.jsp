@@ -1,5 +1,3 @@
-
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
@@ -27,7 +25,6 @@
                     <%
                     HttpSession s = request.getSession();                    
                     %>
-
                     var ni = '<%= (String)s.getAttribute("nombreIndex") %>';
                     console.log(ni);
                     if (ni == 'index'){
@@ -36,6 +33,7 @@
                         location.href='indexConfigurador.htm';                        
                     }
                 }
+
         </script>
         
         
@@ -45,11 +43,11 @@
     <body class="gray-bg">
         <div class="middle-box text-center loginscreen   animated fadeInDown">
             <div>
-                <div>
+<!--                <div>
 
                     <h1 class="logo-name">A.T.A.</h1>
 
-                </div>
+                </div>-->
                 <h3>Ingreso de registro</h3>
                 <p>Crea una cuenta y entra a la aplicación.</p>
                 
@@ -76,7 +74,8 @@
                     
                     
                     <button input type="submit" class="btn btn-primary block full-width m-b">Registrar</button>  
-                    <c:if test="${mens=='guardado'}">                                 
+                    
+                    <c:if test="${mens=='guardado'}">             
                         <% response.sendRedirect("login.htm"); %> 
                     </c:if>
                     

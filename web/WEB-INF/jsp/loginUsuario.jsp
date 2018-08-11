@@ -21,14 +21,25 @@
         <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
         <link href="css/animate.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
+        
+        <script>
+            //window.history.forward();
+            
+            function nobackbutton(){	
+                window.location.hash="no-back-button";             
+                window.location.hash="Again-No-back-button"; //chrome             
+                window.onhashchange=function(){window.location.hash="no-back-button";};
+                $.post('TestConnectionServlet');
+            }
+        </script>
+        
 
     </head>
     
     
     
-    <body class="gray-bg">
-        <div style="float:right"> <p class="font-bold" style="color:#338EFF";> <a href="loginConfigurador.htm">Configuración </a> &nbsp;</p></div>
-        
+    <body class="gray-bg" onload="nobackbutton();">
+        <div style="float:right"> <p class="font-bold" style="color:#338EFF";> <a href="loginConfigurador.htm">Configuración </a> &nbsp;</p></div>      
         
         <div class="loginColumns animated fadeInDown">
         <div class="row">
@@ -117,5 +128,21 @@
             </div>
         </div>
     </div>
+        
+        
+    <script src="js/jquery-2.1.1.js"></script>        
+        
+        
+    <script>        
+        setInterval(function () {
+            $.post('TestConnectionServlet');
+            console.log('sdasd');
+        }, 60000);
+    </script>
+    
+   
+        
+        
+        
     </body>
 </html>

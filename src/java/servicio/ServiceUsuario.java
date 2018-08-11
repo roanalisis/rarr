@@ -17,7 +17,7 @@ public class ServiceUsuario {
     private EntityManager em;
     
     @Transactional(rollbackOn = {ServiceException.class})
-    public void agregarUsuario(UsuarioDTO usuario) throws ServiceException{
+    public void agregarUsuario(UsuarioDTO usuario) throws ServiceException{        
         Usuario u= new Usuario();
         u.setNombreusuario(usuario.getNombreusuario());
         u.setNombre(usuario.getNombre());
