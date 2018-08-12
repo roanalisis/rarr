@@ -26,11 +26,18 @@
     </head>
 
     <body>
-        
         <% 
             HttpSession s = request.getSession();
             //Crear variables de session
             s.setAttribute("nombreIndex", "index");
+        %>
+        
+        <% 
+            String estoyEnLogin = (String)s.getAttribute("estoyEnLogin");
+
+            if (estoyEnLogin.equals("si")){
+                response.sendRedirect("login.htm");
+            }
         %>
         
         

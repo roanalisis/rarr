@@ -27,9 +27,6 @@ public class ConsultaUsuarioController {
    public String consultar(Model model){
        UsuarioDTO usuario = new UsuarioDTO();
        model.addAttribute("usuario", usuario);
-       
-       
-         
        return "loginUsuario";  
    }
    

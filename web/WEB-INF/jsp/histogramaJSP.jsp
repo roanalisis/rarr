@@ -110,6 +110,15 @@
         
     </head>
 <body>
+    <% 
+        HttpSession s = request.getSession();
+       
+        String estoyEnLogin = (String)s.getAttribute("estoyEnLogin");
+
+        if (estoyEnLogin.equals("si")){
+            response.sendRedirect("login.htm");
+        }
+    %>
     <span id="lastTempS" style="display: none"><c:out value="${lastTemp}" /></span>
     <div id="wrapper">
     <nav class="navbar-default navbar-static-side" role="navigation">

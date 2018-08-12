@@ -39,6 +39,11 @@
     
     
     <body class="gray-bg" onload="nobackbutton();">
+        <% 
+            HttpSession s = request.getSession();
+            //Crear variables de session
+            s.setAttribute("estoyEnLogin", "si");            
+        %>
         <div style="float:right"> <p class="font-bold" style="color:#338EFF";> <a href="loginConfigurador.htm">Configuración </a> &nbsp;</p></div>      
         
         <div class="loginColumns animated fadeInDown">
@@ -97,7 +102,11 @@
                         </a>
                         </c:if>
                         
-                        <c:if test="${mensaje=='Encontrado'}">                                 
+                        <c:if test="${mensaje=='Encontrado'}">    
+                            <% 
+                                //seteo de variable de session "estoyEnLogin" en no
+                                s.setAttribute("estoyEnLogin", "no");            
+                            %>
                             <% response.sendRedirect("index.htm"); %> 
                         </c:if>
 

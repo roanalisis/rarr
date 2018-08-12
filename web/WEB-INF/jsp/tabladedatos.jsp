@@ -52,6 +52,15 @@
     
 </head>
     <body class="fixed-navigation">
+        <% 
+            HttpSession s = request.getSession();
+
+            String estoyEnLogin = (String)s.getAttribute("estoyEnLogin");
+
+            if (estoyEnLogin.equals("si")){
+                response.sendRedirect("login.htm");
+            }
+        %>
         <div class="loader">CARGANDO...</div>        
 
         
