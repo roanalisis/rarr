@@ -10,6 +10,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 import org.springframework.stereotype.Service;
+import org.springframework.test.annotation.Rollback;
 import persistencia.Termometro;
 
 /**
@@ -56,11 +57,17 @@ public class ServiceTermometro {
         
     }
     
-//    @Transactional(rollbackOn = {ServiceException.class})
-//    public void eliminarTermometro(TermometroDTO termometro) throws ServiceException{
+    @PersistenceContext
+    private EntityManager emmm;
+    @Transactional(rollbackOn = {ServiceException.class})
+    public void eliminarTermometro(TermometroDTO termometro) throws ServiceException{
+        Termometro t = emmm.find(Termometro.class, termometro.getIdterm());
+        if(t != null ){
+            emmm.remove(t);
+        }
 //        Termometro t = new Termometro();
 //        t.setIdterm(termometro.getIdterm());
-//        emm.remove(t);
-//    }
+//        emmm.remove(t);
+    }
     
 }

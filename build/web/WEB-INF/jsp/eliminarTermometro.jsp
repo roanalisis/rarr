@@ -1,6 +1,6 @@
 <%-- 
-    Document   : usuarioCrear
-    Created on : May 27, 2018, 6:10:05 PM
+    Document   : eliminarTermometro
+    Created on : Aug 13, 2018, 6:28:10 PM
     Author     : rodrigorr
 --%>
 
@@ -35,15 +35,15 @@
     <nav class="navbar-default navbar-static-side" role="navigation">
         <div class="sidebar-collapse">
             <ul class="nav metismenu" id="side-menu">
-  
                 <li class = "active"><a><p style="color:#33FF63";>Configuración</p> </a> </li>
                     <!--<a href="layouts.html"><i class="fa fa-diamond"></i> <span class="nav-label">Layouts</span></a>-->
                     <li><a href="configuracion.htm">Configuración Termómetro</a></li>
                     <li><a href="modificarTermometros.htm">Modificar</a></li>
-                    <li class = "active"><a href="agregarTermometro.htm">Agregar Termómetro</a></li>
-                    <li><a href="eliminarTermometros.htm">Eliminar Termómetro</a></li>
+                    <li><a href="agregarTermometro.htm">Agregar Termómetro</a></li>
+                    <li class = "active"><a href="eliminarTermometros.htm">Eliminar Termómetro</a></li>
                     <li><a href="<c:url value="agregarUsuario.htm" />">Agregar Usuario</a>  </li>                    
-                <li class = "active"><a href="<c:url value="login.htm" />"><p style="color:#33FF63";>Log out</p></a></li>                
+                <li class = "active"><a href="<c:url value="login.htm" />"><p style="color:#33FF63";>Log out</p></a></li>
+                
                 
             </ul>
 
@@ -57,7 +57,7 @@
             <!--<a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a> -->
             <form role="search" class="navbar-form-custom" action="search_results.html">
                 <div class="form-group">
-                    <input type="text" placeholder="Ingreso de temómetro" class="form-control" name="top-search" id="top-search">
+                    <input type="text" placeholder="Modificar temómetros" class="form-control" name="top-search" id="top-search">
                 </div>
             </form>
         </div>
@@ -173,7 +173,7 @@
         </div>
             <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-lg-10">
-                    <h2>Agregar Termómetro</h2>
+                    <h2>Modificar Termómetros</h2>
                     <ol class="breadcrumb">
                         <li>
                             <a href="indexConfigurador.htm">Home</a>
@@ -182,7 +182,7 @@
                             <a>Forms</a>
                         </li>-->
                         <li class="active">
-                            <strong>Agregar termómetro</strong>
+                            <strong>Modificar Termómetros</strong>
                         </li>
                     </ol>
                 </div>
@@ -192,7 +192,7 @@
             </div>
         <div class="wrapper wrapper-content animated fadeInRight">
             <div class="row">
-            <div class="col-lg-7">
+            <!--<div class="col-lg-7">-->
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
                         <h5>Ingrese los datos del termómetro <small> </small></h5>
@@ -206,26 +206,52 @@
                                 <!--<p>Sign in today for more expirience.</p>-->
                                 <!--<form role="form">-->
                                     
-                                    <form:form modelAttribute="termometro" method="post">                                        
-                                        <strong>Dirección IP</strong><form:input id="dirip" path="dirip" type="dirip" placeholder="Ingrese la Dirección IP" class="form-control" /><form:errors path="dirip" /><br />
-                                        <strong>Puerto</strong><form:input id="dirpuerto" path="dirpuerto" type="dirpuerto" placeholder="Ingrese el Puerto" class="form-control" /><form:errors path="dirpuerto" /><br />
-                                        <strong>Canal termómetro</strong><form:input id="clase" path="clase" type="clase" placeholder="Ingrese el canal" class="form-control" /><form:errors path="clase" /><br />            
-                                        <strong>Nombre termómetro</strong><form:input id="nombre" path="nombre" type="clase" placeholder="Ingrese el nombre" class="form-control" /><form:errors path="nombre" /><br />           
-                                        <strong>Rango Máximo</strong><form:input id="rangomax" path="rangomax" type="rangomax" placeholder="Ingrese rango Máximo" class="form-control" /><form:errors path="rangomax" /><br />
-                                        <strong>Rango Mínimo</strong><form:input id="rangomin" path="rangomin" type="rangomin" placeholder="Ingrese rango Mínimo" class="form-control" /><form:errors path="rangomin" /><br />
+                                    <form:form modelAttribute="termometro" method="post">  
+
+                                        <table>
+                                            <tbody>
+                                                    <tr>
+                                                        <td colspan="1"> <strong>Id del Termómetro</strong><form:input id="idterm" path="idterm" type="idterm" placeholder="Id Termómetro" class="form-control" /><form:errors path="idterm" /><br /> </td>                                                                  
+                                                           
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="1"> <strong>Dirección IP</strong><form:input id="dirip" path="dirip" type="dirip" placeholder="Dirección IP" class="form-control" /><form:errors path="dirip" /><br /> </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="1"> <strong>Puerto</strong><form:input id="dirpuerto" path="dirpuerto" type="dirpuerto" placeholder="Puerto" class="form-control" /><form:errors path="dirpuerto" /><br /> </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="1"> <strong>Canal termómetro</strong><form:input id="clase" path="clase" type="clase" placeholder="Canal" class="form-control" /><form:errors path="clase" /><br /> </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="1"> <strong>Nombre termómetro</strong><form:input id="nombre" path="nombre" type="nombre" placeholder="Nombre" class="form-control" /><form:errors path="nombre" /><br /> </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="1"> <strong>Rango Máximo</strong><form:input id="rangomax" path="rangomax" type="rangomax" placeholder="Rango Máximo" class="form-control" /><form:errors path="rangomax" /><br /> </td>                                                        
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="1"> <strong>Rango Mínimo</strong><form:input id="rangomin" path="rangomin" type="rangomin" placeholder="Rango Mínimo" class="form-control" /><form:errors path="rangomin" /><br /> </td>                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                        
+                                                    
+                                                    
+                                        
                                         <div>
-                                            <button class="btn btn-sm btn-primary pull-right m-t-n-xs" input type="submit" value="Registrar" ><strong>Registrar</strong> </button> 
+                                            <button class="btn btn-sm btn-primary pull-right m-t-n-xs" input type="submit" value="Actualizar" ><strong>Actualizar</strong> </button> 
                                         </div>                                        
                                     </form:form> 
                                         
                                     
                                 <!--</form>-->
                             </div>
-                             <div class="col-sm-6"><h4>Resultado</h4>
+                             <div class="col-sm-6"><h4>Lista de Termometros del Adam-6015</h4>
                                 <!--<p>You can create an account:</p>-->
                                 <p class="text-center">
                                     <!--<a href=""><i class="fa fa-sign-in big-icon"></i></a>-->
                                     <script type="text/javascript">
+                                        idterm.value="";
                                         dirip.value="";
                                         dirpuerto.value="";
                                         clase.value="";
@@ -233,14 +259,72 @@
                                         rangomax.value="";
                                         rangomin.value="";
                                     </script>
-                                    <div><strong><c:out value="${mensaje} " /></strong> </div>
-                                    <div><c:out value="${cla} " /> </div>
-                                    <div><c:out value="${nom} " /> </div>
-                                    <div><c:out value="${dip} " /> </div>
-                                    <div><c:out value="${dpu} " /> </div>
-                                    <div><c:out value="${rmax} " /> </div>
-                                    <div><c:out value="${rmin} " /> </div>
+                                    
                                 </p>
+                                
+                                
+                                
+                                <div class="col-lg-0">                                    
+                                    <!--<div class="ibox float-e-margins">-->
+                                    <div class="table-responsive">                                            
+                                    <div class="ibox-content">
+                                    <table id="table" class="table table-hover no-margins">
+                                        <thead>
+                                        <tr>
+
+                                            <th>Id Termómetro </th>
+                                            <th>Dirección IP </th>
+                                            <th>Puerto </th>   
+                                            <th>Canal </th> 
+                                            <th>Nombre </th>  
+                                            <th>Rango Máximo </th> 
+                                            <th>Rango Mínimo </th>  
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                         
+                                        <c:forEach items="${lisTerm}" var="termometro">
+                                            <option value="${termometro.idterm}" ></option>
+                                                <tr>
+                                                   <td>${termometro.idterm}</td>
+                                                   <td>${termometro.dirip}</td>
+                                                   <td>${termometro.dirpuerto}</td>
+                                                   <td>${termometro.clase}</td>
+                                                   <td>${termometro.nombre}</td>
+                                                   <td>${termometro.rangomax}</td>
+                                                   <td>${termometro.rangomin}</td>
+                                                </tr>                                                
+                                        </c:forEach>  
+
+                                        </tbody>
+                                    </table>
+                                        <script>
+                                            var table = document.getElementById('table'),rIndex;
+                                            for (var i = 0; i < table.rows.length; i++){
+                                                table.rows[i].onclick = function(){
+                                                    rIndex = this.rowIndex;
+                                                    console.log(rIndex);
+                                                    document.getElementById("idterm").value = this.cells[0].innerHTML;
+                                                    document.getElementById("dirip").value = this.cells[1].innerHTML;
+                                                    document.getElementById("dirpuerto").value = this.cells[2].innerHTML;
+                                                    document.getElementById("clase").value = this.cells[3].innerHTML;
+                                                    document.getElementById("nombre").value = this.cells[4].innerHTML;    
+                                                    document.getElementById("rangomax").value = this.cells[5].innerHTML;
+                                                    document.getElementById("rangomin").value = this.cells[6].innerHTML;    
+                                                };
+                                            }
+                                                        
+                                        </script>
+                                        
+                                        
+                                    </div>
+                                    </div>
+                                </div>
+                                
+                                
+                                
+                                
+                                
                             </div> 
                         </div>
                     </div>
@@ -249,7 +333,12 @@
      
             </div>
      
-        </div>
+                  
+                                
+                                
+                                
+                                
+                                
         <div class="footer">
             <div class="pull-right">
                 10GB of <strong>250GB</strong> Free.
@@ -258,12 +347,12 @@
                 <strong>MMR</strong> &copy; 2018
             </div>
         </div>
-
         </div>
         </div>
+        
 
 
-    <!-- Mainly scripts -->
+    <!-- Mainly scripts -->    
     <script src="js/jquery-2.1.1.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
@@ -288,3 +377,4 @@
             
     </body>
 </html>
+

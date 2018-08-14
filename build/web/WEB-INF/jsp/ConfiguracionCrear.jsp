@@ -34,7 +34,7 @@
                     <li class = "active"><a href="configuracion.htm">Configuración Termómetro</a></li>
                     <li><a href="modificarTermometros.htm">Modificar</a></li>
                     <li><a href="agregarTermometro.htm">Agregar Termómetro</a></li>
-                    <li><a href="#">Eliminar</a></li>  
+                    <li><a href="eliminarTermometros.htm">Eliminar Termómetro</a></li>
                     <li><a href="<c:url value="agregarUsuario.htm" />">Agregar Usuario</a>  </li>                    
                 <li class = "active"><a href="<c:url value="login.htm" />"><p style="color:#33FF63";>Log out</p></a></li>
                 
