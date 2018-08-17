@@ -11,7 +11,10 @@ import javax.persistence.Id;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+import org.hibernate.validator.constraints.NotEmpty;
+import org.hibernate.validator.constraints.Range;
 
 /**
  *
@@ -27,7 +30,11 @@ public class TermometroDTO implements Serializable{
     @Size(min = 1, max = 15, message = "El largo del campo debe ser hasta 15.")
     private String dirip;
     @Min(1)
-    @Max(999999)
+    //@Max(999999)
+    //@Size(min = 1, max = 6, message = "Debe ingresar un puerto.")
+    //@NotNull(message = "Debe ingresar el puerto.")
+    //@Range(min = 1, max = 999999, message = "Debe ingresar el puerto.")
+    //@NotEmpty()
     private int dirpuerto;
     @NotNull
     private float rangomax;

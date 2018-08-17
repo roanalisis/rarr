@@ -52,6 +52,7 @@ public class ConfiguracionController {
                 model.addAttribute("intervalom", configuracion.getIntervalom());
                 model.addAttribute("intervalos", configuracion.getIntervalos());
                 model.addAttribute("lisTerm", servicioCons.listarTermometros());
+                model.addAttribute("listConfiguraciones", servicio.buscarConfiguraciones());
                 return "ConfiguracionCrear";
             } catch (UnexpectedRollbackException e) {
 
