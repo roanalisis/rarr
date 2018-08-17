@@ -62,9 +62,10 @@ public class ServiceTermometro {
     @Transactional(rollbackOn = {ServiceException.class})
     public void eliminarTermometro(TermometroDTO termometro) throws ServiceException{
         Termometro t = emmm.find(Termometro.class, termometro.getIdterm());
-        if(t != null ){
+        //if(t != null ){
             emmm.remove(t);
-        }
+            System.out.println("termómetro eliminado");
+        //}
 //        Termometro t = new Termometro();
 //        t.setIdterm(termometro.getIdterm());
 //        emmm.remove(t);

@@ -74,7 +74,7 @@ public class Termometro implements Serializable {
     private List<Configuracion> configuracionList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idtermometro")
     private List<Notificacion> notificacionList;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idtermometro")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idtermometro", orphanRemoval = true)
     private List<Registrotemp> registrotempList;
 
     public Termometro() {

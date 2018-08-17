@@ -173,7 +173,7 @@
         </div>
             <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-lg-10">
-                    <h2>Modificar Termómetros</h2>
+                    <h2>Eliminar Termómetros</h2>
                     <ol class="breadcrumb">
                         <li>
                             <a href="indexConfigurador.htm">Home</a>
@@ -182,7 +182,7 @@
                             <a>Forms</a>
                         </li>-->
                         <li class="active">
-                            <strong>Modificar Termómetros</strong>
+                            <strong>Eliminar Termómetros</strong>
                         </li>
                     </ol>
                 </div>
@@ -239,7 +239,7 @@
                                                     
                                         
                                         <div>
-                                            <button class="btn btn-sm btn-primary pull-right m-t-n-xs" input type="submit" value="Actualizar" ><strong>Actualizar</strong> </button> 
+                                            <button class="btn btn-sm btn-primary pull-right m-t-n-xs" input type="submit" value="Eliminar" ><strong>Eliminar</strong> </button> 
                                         </div>                                        
                                     </form:form> 
                                         

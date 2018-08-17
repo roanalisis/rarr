@@ -15,6 +15,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import servicio.ServiceConfiguracion;
 import servicio.ServiceConsultaTermometros;
 import servicio.ServiceException;
 import servicio.ServiceTermometro;
@@ -48,7 +49,7 @@ public class TermometroEliminarController {
             return "eliminarTermometro";
         }else{
             try {    
-                servicio.actualizarTermometro(termometro);
+                servicio.eliminarTermometro(termometro);
                 model.addAttribute("lisTerm", servicioCons.listarTodos());
                 return "eliminarTermometro";
             } catch (UnexpectedRollbackException e) {
