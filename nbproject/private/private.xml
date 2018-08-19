@@ -14,7 +14,6 @@
         <group>
             <file>file:/home/rodrigorr/NetBeansProjects/Adam6015/rarr/src/java/presentacion/UsuarioController.java</file>
             <file>file:/home/rodrigorr/NetBeansProjects/Adam6015/rarr/src/java/presentacion/EnviarCorreoServlet.java</file>
-            <file>file:/home/rodrigorr/NetBeansProjects/Adam6015/rarr/src/java/servicio/ConfiguracionDAO.java</file>
             <file>file:/home/rodrigorr/NetBeansProjects/Adam6015/rarr/src/java/persistencia/Configuracion.java</file>
             <file>file:/home/rodrigorr/NetBeansProjects/Adam6015/rarr/src/java/presentacion/TermometroEliminarController.java</file>
             <file>file:/home/rodrigorr/NetBeansProjects/Adam6015/rarr/src/java/servicio/ServiceConfiguracion.java</file>
@@ -23,10 +22,13 @@
             <file>file:/home/rodrigorr/NetBeansProjects/Adam6015/rarr/src/java/persistencia/Termometro.java</file>
             <file>file:/home/rodrigorr/NetBeansProjects/Adam6015/rarr/src/java/presentacion/ConsultaUsuarioController.java</file>
             <file>file:/home/rodrigorr/NetBeansProjects/Adam6015/rarr/web/WEB-INF/jsp/usuarioCrear.jsp</file>
+            <file>file:/home/rodrigorr/NetBeansProjects/Adam6015/rarr/src/java/dto/TermometroDTO.java</file>
             <file>file:/home/rodrigorr/NetBeansProjects/Adam6015/rarr/src/java/servicio/ServiceTermometro.java</file>
             <file>file:/home/rodrigorr/NetBeansProjects/Adam6015/rarr/src/java/presentacion/IndexController.java</file>
             <file>file:/home/rodrigorr/NetBeansProjects/Adam6015/rarr/web/WEB-INF/jsp/loginConfigurador.jsp</file>
             <file>file:/home/rodrigorr/NetBeansProjects/Adam6015/rarr/web/WEB-INF/jsp/loginUsuario.jsp</file>
+            <file>file:/home/rodrigorr/NetBeansProjects/Adam6015/rarr/web/WEB-INF/jsp/ConfiguracionCrear.jsp</file>
+            <file>file:/home/rodrigorr/NetBeansProjects/Adam6015/rarr/src/java/presentacion/ConfiguracionController.java</file>
         </group>
     </open-files>
 </project-private>
