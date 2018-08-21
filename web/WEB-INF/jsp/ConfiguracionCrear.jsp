@@ -38,14 +38,14 @@
             <nav class="navbar-default navbar-static-side" role="navigation">
                 <div class="sidebar-collapse">
                     <ul class="nav metismenu" id="side-menu">
-                        <li class = "active"><a><p style="color:#33FF63";>Configuración</p> </a> </li>
+                        <li class = "active"><a><p style="color:#33FF63";><i class="fa fa-cogs"></i> <span class="nav-label">Configuración</span></p></a> </li>
                         <!--<a href="layouts.html"><i class="fa fa-diamond"></i> <span class="nav-label">Layouts</span></a>-->
-                        <li class = "active"><a href="configuracion.htm">Configuración Termómetro</a></li>
-                        <li><a href="modificarTermometros.htm">Modificar</a></li>
-                        <li><a href="agregarTermometro.htm">Agregar Termómetro</a></li>
-                        <li><a href="eliminarTermometros.htm">Eliminar Termómetro</a></li>
-                        <li><a href="<c:url value="agregarUsuario.htm" />">Agregar Usuario</a>  </li>                    
-                        <li class = "active"><a href="<c:url value="login.htm" />"><p style="color:#33FF63";>Log out</p></a></li>
+                        <li class = "active"><a href="configuracion.htm"><i class="fa fa-cog"></i> <span class="nav-label">Configurar Termómetro</span></a></li>
+                        <li><a href="modificarTermometros.htm"><i class="fa fa-edit"></i> <span class="nav-label">Modificar Termómetro</span></a></li>
+                        <li><a href="agregarTermometro.htm"><i class="fa fa-plus"></i> <span class="nav-label">Agregar Termómetro</span></a></li>
+                        <li><a href="eliminarTermometros.htm"><i class="fa fa-trash"></i> <span class="nav-label">Eliminar Termómetro</span></a></li>   
+                        <li><a href="<c:url value="agregarUsuario.htm" />"><i class="fa fa-user"></i> <span class="nav-label">Agregar Usuario</span></a></li>
+                        <li class = "active"><a href="<c:url value="login.htm" />"><p style="color:#33FF63";><i class="fa fa-sign-out"></i> <span class="nav-label">Log out</span></p></a></li>
 
 
                     </ul>
